@@ -81,36 +81,43 @@
 
     <main class="tour-page">
         <section class="tour-hero">
-            <div class="tour-title">
-                <h1>Manila Old and New Sightseeing Tour Including Intramuros and Fort Santiago</h1>
-                <div class="rating">
-                    <span>★ 4.5</span> (Based on 123 reviews) | <span>🗺️</span> Recommended by 90% of travelers | <span>🏆</span> Badge of Excellence | <span>🌏</span> Luzon, Philippines
+            <div class="tour-details-container">
+                <div class="tour-title">
+                    <h1>Manila Old and New Sightseeing Tour Including Intramuros and Fort Santiago</h1>
+                    <div class="ratingtop">
+                        <span>★ 4.5</span> (Based on 123 reviews) | <span>🗺️</span> Recommended by 90% of travelers | <span>🏆</span> Badge of Excellence | <span>🌏</span> Luzon, Philippines
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="gallery">
-            <div class="thumbnail-container">
-                <img src="https://dynamic-media.tacdn.com/media/photo-o/2f/1d/aa/c1/caption.jpg?w=700&h=500&s=1" alt="Thumbnail 1" class="thumbnail" onclick="changeMainImage(this)">
-                    <img src="https://dynamic-media.tacdn.com/media/photo-o/2f/1d/d6/43/caption.jpg?w=700&h=500&s=1" alt="Thumbnail 2" class="thumbnail" onclick="changeMainImage(this)">
-                    <img src="https://dynamic-media.tacdn.com/media/photo-o/2f/1d/d2/af/caption.jpg?w=700&h=500&s=1" alt="Thumbnail 3" class="thumbnail" onclick="changeMainImage(this)">
-                    <img src="https://dynamic-media.tacdn.com/media/photo-o/2f/1d/d2/4c/caption.jpg?w=700&h=500&s=1" alt="Thumbnail 4" class="thumbnail" onclick="changeMainImage(this)">
-                    <img src="https://dynamic-media.tacdn.com/media/photo-o/2f/1d/aa/76/caption.jpg?w=700&h=500&s=1" alt="Thumbnail 5" class="thumbnail" onclick="changeMainImage(this)">
-            </div>
-            <div class="main-image">
-                <img src="https://dynamic-media.tacdn.com/media/photo-o/2f/1d/aa/c1/caption.jpg?w=700&h=500&s=1" alt="Main Image" id="mainImg">
-                <div class="button-container">
-                    <button class="share-btn">Share</button>
-                    <button class="wishlist-btn">Add to Wishlist</button>
+                <section class="gallery">
+                    <div class="thumbnail-container">
+                        <img src="https://dynamic-media.tacdn.com/media/photo-o/2f/1d/aa/c1/caption.jpg?w=700&h=500&s=1" alt="Thumbnail 1" class="thumbnail" onclick="changeMainImage(this)">
+                        <img src="https://dynamic-media.tacdn.com/media/photo-o/2f/1d/d6/43/caption.jpg?w=700&h=500&s=1" alt="Thumbnail 2" class="thumbnail" onclick="changeMainImage(this)">
+                        <img src="https://dynamic-media.tacdn.com/media/photo-o/2f/1d/d2/af/caption.jpg?w=700&h=500&s=1" alt="Thumbnail 3" class="thumbnail" onclick="changeMainImage(this)">
+                        <img src="https://dynamic-media.tacdn.com/media/photo-o/2f/1d/d2/4c/caption.jpg?w=700&h=500&s=1" alt="Thumbnail 4" class="thumbnail" onclick="changeMainImage(this)">
+                        <img src="https://dynamic-media.tacdn.com/media/photo-o/2f/1d/aa/76/caption.jpg?w=700&h=500&s=1" alt="Thumbnail 5" class="thumbnail" onclick="changeMainImage(this)">
+                    </div>
+                    <div class="main-image">
+                        <img src="https://dynamic-media.tacdn.com/media/photo-o/2f/1d/aa/c1/caption.jpg?w=700&h=500&s=1" alt="Main Image" id="mainImg">
+                        <div class="button-container">
+                            <button class="share-btn">Share</button>
+                            <button class="wishlist-btn">Add to Wishlist</button>
+                        </div>
+                        <div class="share-options" id="shareOptions">
+                            <span>Share Link</span>
+                            <span>Email</span>
+                        </div>
+                        <div class="wishlist-message" id="wishlistMessage"></div>
+                        <button class="prev-btn">&lt;</button>
+                        <button class="next-btn">&gt;</button>
+                    </div>
+                </section>
+                <div class="tour-info">
+                    <span>⏳ 4 hours (approx)</span>
+                    <span>🚗 Pickup offered</span>
+                    <span>💰 Group discounts</span>
+                    <span>📱 Mobile ticket</span>
+                    <span>🌐 Offered in: English</span>
                 </div>
-                <div class="share-options" id="shareOptions">
-                    <span>Share Link</span>
-                    <span>Email</span>
-                </div>
-
-                <div class="wishlist-message" id="wishlistMessage"></div>
-                <button class="prev-btn">&lt;</button>
-                <button class="next-btn">&gt;</button>
             </div>
         </section>
 
@@ -141,38 +148,198 @@
         </section>
 
         <section class="tour-options">
-            <h2>Available Options</h2>
-            <div class="option-card">
-                <h3>Half-Day Tour</h3>
-                <p>Duration: 4 hours</p>
-                <p>Price: $45 per person</p>
-                <button class="book-now">Book Now</button>
-            </div>
-            <div class="option-card">
-                <h3>Private Tour</h3>
-                <p>Duration: 4 hours</p>
-                <p>Price: $120 per group (up to 4 people)</p>
-                <button class="book-now">Book Now</button>
-            </div>
-        </section>
-
+          <h2>Available Tour Options</h2>
+          <div class="option-card">
+              <div class="card-image">
+                  <img src="https://dynamic-media.tacdn.com/media/photo-o/2f/1d/b2/0f/caption.jpg?w=1400&h=1000&s=1" alt="Half-Day Tour Destination">
+              </div>
+              <div class="card-content">
+                  <h3>Half-Day Tour</h3>
+                  <p class="duration">Duration: 4 hours</p>
+                  <p class="price">Price: $45 per person</p>
+                  <button class="book-now">Book Now</button>
+              </div>
+          </div>
+          <div class="option-card">
+              <div class="card-image">
+                  <img src="https://dynamic-media.tacdn.com/media/photo-o/2f/1d/d2/ed/caption.jpg?w=1400&h=1000&s=1" alt="Private Tour Destination">
+              </div>
+              <div class="card-content">
+                  <h3>Private Tour</h3>
+                  <p class="duration">Duration: 4 hours</p>
+                  <p class="price">Price: $120 per group (up to 4 people)</p>
+                  <button class="book-now">Book Now</button>
+              </div>
+          </div>
+      </section>
         <section class="reviews">
-            <h2>Reviews</h2>
-            <div class="review-placeholder">
-                <!-- Placeholder box for reviews -->
-                <div class="placeholder-box">Review 1</div>
-                <div class="placeholder-box">Review 2</div>
-                <div class="placeholder-box">Review 3</div>
-            </div>
-        </section>
+          <h2>Why travelers loved this <span class="highlight">🏞️</span></h2>
+          <div class="rating">⭐ 4.5 - 354 Reviews</div>
+          <div class="filter-buttons">
+              <button class="filter active">All</button>
+              <button class="filter">Informative</button>
+              <button class="filter">Great guides</button>
+              <button class="filter">Great drivers</button>
+          </div>
+          <div class="review-container">
+              <button class="nav prev">◄</button>
+              <div class="review-wrapper">
+                  <div class="review-card">
+                      <div class="stars">⭐⭐⭐⭐⭐</div>
+                      <div class="reviewer">Chad_R - Sep 2025</div>
+                      <p class="review-text">Great experience! The tour was well-organized, informative, and fun. Our guide was friendly and knowledgeable, and we got to see and learn a lot in a short amount of time. Definitely worth it!</p>
+                  </div>
+                  <div class="review-card hidden">
+                      <div class="stars">⭐⭐⭐⭐⭐</div>
+                      <div class="reviewer">Virgilio_M - Sep 2025</div>
+                      <p class="review-text">A very educational experience, learned a lot of history about the different places visited. Our tour guide, Nori was like a history professor showing us the different historical places in Makati and Manila explaining the historical significance found...</p>
+                      <a href="#" class="read-more">Read more</a>
+                  </div>
+                  <div class="review-card hidden">
+                      <div class="stars">⭐⭐⭐⭐☆</div>
+                      <div class="reviewer">Jane_D - Oct 2025</div>
+                      <p class="review-text">Enjoyed the tour, the driver was excellent and made the trip smooth. Would recommend for a quick city overview!</p>
+                  </div>
+              </div>
+              <button class="nav next">►</button>
+          </div>
+      </section>
 
-        <section class="map-section">
-            <h2>Location</h2>
-            <div class="map-placeholder">
-                <!-- Placeholder box for map -->
-                <div class="placeholder-box">Map</div>
-            </div>
-        </section>
+        <section class="itinerary-section">
+          <h2>Itinerary</h2>
+          <div class="itinerary-placeholder">
+              <div> Choose from a morning or afternoon tour that starts with pickup from your Manila hotel, then travel with your experienced guide into the heart of the Philippine's financial center: Makati.</div>
+              <ol>
+                  <li>
+                      <strong>Rizal Park</strong> 
+                      <p>Rizal Park, also known as Luneta Park or simply Luneta, is a historic urban park located in Ermita, Manila, Philippines which is considered as one of the largest urban parks in Asia. Here you will see the stat ... <a href="#">Read more</a></p>
+                      <p>10 minutes • Admission Ticket Free</p>
+                  </li>
+                  <li>
+                      <strong>San Agustin Church - Immaculate Conception Parish</strong>
+                      <p>San Agustin Church, also known as the Archdiocesan Shrine of Nuestra Señora de Consolación y Correa or the Immaculate Conception Parish, is a Roman Catholic church under the auspices of the Order of St. ... <a href="#">Read more</a></p>
+                      <p>15 minutes • Admission Ticket Included</p>
+                  </li>
+                  <li>
+                      <strong>Manila American Cemetery and Memorial</strong>
+                      <p>The Manila American Cemetery and Memorial is located in Fort Bonifacio, Taguig City, Metro Manila, within the boundaries of the former Fort William McKinley. It can be reached most easily from the city via Epif ... <a href="#">Read more</a></p>
+                      <p>15 minutes • Admission Ticket Free</p>
+                  </li>
+                  <li>
+                      <strong>Intramuros</strong>
+                      <p>Old-world Intramuros is home to Spanish-era landmarks like Fort Santiago, with a large stone gate and a shrine to national hero Jose Rizal.</p>
+                      <p>30 minutes • Admission Ticket Included</p>
+                  </li>
+                  <li>
+                      <strong>Roxas Boulevard (Pass By)</strong>
+                      <p>Roxas Boulevard is a popular waterfront promenade in Metro Manila in the Philippines. The boulevard, which runs along the shores of Manila Bay, is well known for its sunsets and stretch of coconut trees.</p>
+                  </li>
+                  <li>
+                      <strong>Fort Santiago</strong>
+                      <p>Fort Santiago, built in 1593, is a citadel built by Spanish navigator and governor Miguel López de Legazpi for the new established city of Manila in the Philippines. The defense fortress is located in Intramuros, the ... <a href="#">Read more</a></p>
+                      <p>20 minutes • Admission Ticket Included</p>
+                  </li>
+              </ol>
+          </div>
+      </section>
+
+      <section class="additional-info-section">
+          <h2>Additional Info</h2>
+          <ul>
+              <li>Confirmation will be received at time of booking</li>
+              <li>Comfortable walking shoes are recommended</li>
+              <li>Children must be accompanied by an adult</li>
+              <li>Not wheelchair accessible</li>
+              <li>Minimum age is 2 years</li>
+              <li>Near public transportation</li>
+          </ul>
+          <button id="showMoreBtn">Show 3 more</button>
+          <p>Supplied by Baron Travel Corporation</p>
+          <div id="moreInfo" class="modal">
+              <div class="modal-content">
+                  <span id="closeModal">&times;</span>
+                  <h2>Additional Info</h2>
+                  <ul>
+                      <li>Confirmation will be received at time of booking</li>
+                      <li>Comfortable walking shoes are recommended</li>
+                      <li>Children must be accompanied by an adult</li>
+                      <li>Not wheelchair accessible</li>
+                      <li>Minimum age is 2 years</li>
+                      <li>Near public transportation</li>
+                      <li>Infants must sit on laps</li>
+                      <li>Most travelers can participate</li>
+                      <li>This tour/activity will have a maximum of 30 travelers</li>
+                  </ul>
+              </div>
+          </div>
+      </section>
+
+      <section class="traveler-photos-section">
+          <h2>Traveler Photos</h2>
+          <div class="photo-grid">
+              <img src="https://media.tacdn.com/media/photo-m/1280/2d/a0/63/5f/caption.jpg" alt="Park with monument">
+              <img src="https://media.tacdn.com/media/photo-m/1280/2c/3b/59/cb/caption.jpg" alt="Historic monument">
+              <img src="https://media.tacdn.com/media/photo-w/2c/3b/59/ca/caption.jpg" alt="Church exterior">
+              <img src="https://media.tacdn.com/media/photo-w/2c/3b/59/c9/caption.jpg" alt="Fortress gate">
+              <img src="https://media.tacdn.com/media/photo-w/2c/3b/59/c8/caption.jpg" alt="See more">
+          </div>
+          <div id="morePhotos" class="modalv">
+              <div class="modal-contentv">
+                  <span id="closeModalv">&times;</span>
+                  <h2>Traveler Photos</h2>
+                  <div class="photo-grid">
+                      <img src="https://media.tacdn.com/media/photo-m/1280/2d/a0/63/5f/caption.jpg" alt="Park with monument">
+                      <img src="https://media.tacdn.com/media/photo-m/1280/2c/3b/59/cb/caption.jpg" alt="Historic monument">
+                      <img src="https://media.tacdn.com/media/photo-w/2c/3b/59/ca/caption.jpg" alt="Church exterior">
+                      <img src="https://media.tacdn.com/media/photo-w/2c/3b/59/c9/caption.jpg" alt="Fortress gate">
+                      <img src="https://media.tacdn.com/media/photo-w/2c/3b/59/c8/caption.jpg" alt="Additional photo">
+                      <img src="https://media.tacdn.com/media/photo-w/2c/3b/59/cc/caption.jpg" alt="Another photo">
+                  </div>
+              </div>
+          </div>
+          <button id="showMoreBtnv">Show 3 more</button>
+      </section>
+
+      <section class="tour-reviews-section">
+          <h2>Reviews</h2>
+          <div class="tour-review-summary">
+              <span class="tour-rating">4.5</span>
+              <span class="tour-stars">★★★★☆</span>
+              <span class="tour-review-count">based on 354 reviews</span>
+              <div class="tour-rating-details">
+                  <p>Total reviews and rating from Viator & Tripadvisor</p>
+                  <div class="tour-rating-bars">
+                      <div><span>5 stars</span><div class="tour-bar" style="width: 70%;"></div><span>240</span></div>
+                      <div><span>4 stars</span><div class="tour-bar" style="width: 22%;"></div><span>77</span></div>
+                      <div><span>3 stars</span><div class="tour-bar" style="width: 6%;"></div><span>20</span></div>
+                      <div><span>2 stars</span><div class="tour-bar" style="width: 4%;"></div><span>15</span></div>
+                      <div><span>1 star</span><div class="tour-bar" style="width: 1%;"></div><span>2</span></div>
+                  </div>
+                  <p>★ We perform checks on reviews</p>
+              </div>
+          </div>
+          <div class="tour-review-search">
+              <input type="text" placeholder="Search reviews (e.g. guide)">
+              <select>
+                  <option>Sort by: Most recent</option>
+              </select>
+          </div>
+          <div class="tour-reviews-list" id="tourReviewsList">
+              <div class="tour-review">
+                  <span class="tour-stars">★★★★☆</span>
+                  <p class="tour-review-text">Wet but great experience...</p>
+                  <p class="tour-author">Stephen T. - Sep 2025</p>
+                  <p class="tour-comment">Wet but great experience. Nori, our guide was passionate and very knowledgeable. He tried to make us comfortable.</p>
+              </div>
+              <div class="tour-review">
+                  <span class="tour-stars">★★★★★</span>
+                  <p class="tour-review-text">Amazing tour!</p>
+                  <p class="tour-author">Maria L. - Oct 2025</p>
+                  <p class="tour-comment">The tour was fantastic, the guide was excellent and the sites were breathtaking.</p>
+              </div>
+          </div>
+          <button id="tourShowMoreBtn">Show more reviews</button>
+      </section>
     </main>
 
     <footer>

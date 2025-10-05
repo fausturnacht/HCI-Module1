@@ -156,3 +156,94 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const reviews = document.querySelectorAll('.review-card');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let currentIndex = 0;
+
+    function showReview(index) {
+        reviews.forEach((review, i) => {
+            review.classList.toggle('hidden', i !== index);
+        });
+    }
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : reviews.length - 1;
+        showReview(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex < reviews.length - 1) ? currentIndex + 1 : 0;
+        showReview(currentIndex);
+    });
+
+    // Show the first review by default
+    showReview(currentIndex);
+});
+
+document.getElementById('showMoreBtn').addEventListener('click', function() {
+    document.getElementById('moreInfo').style.display = 'block';
+});
+
+document.getElementById('closeModal').addEventListener('click', function() {
+    document.getElementById('moreInfo').style.display = 'none';
+});
+
+document.getElementById('showMoreBtnv').addEventListener('click', function() {
+    document.getElementById('morePhotos').style.display = 'block';
+});
+
+document.getElementById('closeModalv').addEventListener('click', function() {
+    document.getElementById('morePhotos').style.display = 'none';
+});
+
+document.getElementById('tourShowMoreBtn').addEventListener('click', function() {
+    const reviewsList = document.getElementById('tourReviewsList');
+    const additionalReviews = [
+        {
+            stars: '★★★★★',
+            text: 'Amazing tour!',
+            author: 'Maria L. - Oct 2025',
+            comment: 'The tour was fantastic, the guide was excellent and the sites were breathtaking.'
+        },
+        {
+            stars: '★★★☆☆',
+            text: 'Good but could improve...',
+            author: 'John D. - Oct 2025',
+            comment: 'The experience was good, but the timing could be better organized.'
+        },
+        {
+            stars: '★★★★☆',
+            text: 'Enjoyable day out!',
+            author: 'Lisa K. - Oct 2025',
+            comment: 'Had a wonderful time, the weather was perfect and the guide was very helpful.'
+        },
+        {
+            stars: '★★★★★',
+            text: 'Highly recommend!',
+            author: 'Peter R. - Oct 2025',
+            comment: 'Best tour I’ve been on, the history was fascinating and the guide was top-notch.'
+        },
+        {
+            stars: '★★☆☆☆',
+            text: 'Average experience...',
+            author: 'Emma S. - Oct 2025',
+            comment: 'It was okay, but the pace was a bit rushed for my liking.'
+        }
+    ];
+
+    additionalReviews.forEach(review => {
+        const reviewDiv = document.createElement('div');
+        reviewDiv.className = 'tour-review';
+        reviewDiv.innerHTML = `
+            <span class="tour-stars">${review.stars}</span>
+            <p class="tour-review-text">${review.text}</p>
+            <p class="tour-author">${review.author}</p>
+            <p class="tour-comment">${review.comment}</p>
+        `;
+        reviewsList.appendChild(reviewDiv);
+    });
+
+    this.style.display = 'none'; // Hide button after showing more reviews
+});

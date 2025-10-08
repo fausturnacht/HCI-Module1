@@ -23,7 +23,7 @@
 
   <div class="floating-container">
   <div class="booking-details">
-    <h2>From ₱3,583.86 per person</h2>
+    <h2>From ₱2,000-₱2,500 per person</h2>
     <p><span class="discount-note">ⓘ Discounted rates for children</span></p>
     <div class="row">
       <div class="col">
@@ -85,7 +85,7 @@
                 <div class="tour-title">
                     <h1>Manila Old and New Sightseeing Tour Including Intramuros and Fort Santiago</h1>
                     <div class="ratingtop">
-                        <span>★ 4.5</span> (Based on 123 reviews) | <span>🗺️</span> Recommended by 90% of travelers | <span>🏆</span> Badge of Excellence | <span>🌏</span> Luzon, Philippines
+                        <span>★ 4.5</span> (Based on 354 reviews) | <span>🗺️</span> Recommended by 90% of travelers | <span>🏆</span> Badge of Excellence | <span>🌏</span> Luzon, Philippines
                     </div>
                 </div>
                 <section class="gallery">
@@ -156,7 +156,7 @@
               <div class="card-content">
                   <h3>Half-Day Tour</h3>
                   <p class="duration">Duration: 4 hours</p>
-                  <p class="price">Price: $45 per person</p>
+                  <p class="price">Price: ₱2,500 per person</p>
                   <button class="book-now">Book Now</button>
               </div>
           </div>
@@ -167,7 +167,7 @@
               <div class="card-content">
                   <h3>Private Tour</h3>
                   <p class="duration">Duration: 4 hours</p>
-                  <p class="price">Price: $120 per group (up to 4 people)</p>
+                  <p class="price">Price: ₱6,000 per group (up to 4 people)</p>
                   <button class="book-now">Book Now</button>
               </div>
           </div>
@@ -301,45 +301,55 @@
       </section>
 
       <section class="tour-reviews-section">
-          <h2>Reviews</h2>
-          <div class="tour-review-summary">
-              <span class="tour-rating">4.5</span>
-              <span class="tour-stars">★★★★☆</span>
-              <span class="tour-review-count">based on 354 reviews</span>
-              <div class="tour-rating-details">
-                  <p>Total reviews and rating from Viator & Tripadvisor</p>
-                  <div class="tour-rating-bars">
-                      <div><span>5 stars</span><div class="tour-bar" style="width: 70%;"></div><span>240</span></div>
-                      <div><span>4 stars</span><div class="tour-bar" style="width: 22%;"></div><span>77</span></div>
-                      <div><span>3 stars</span><div class="tour-bar" style="width: 6%;"></div><span>20</span></div>
-                      <div><span>2 stars</span><div class="tour-bar" style="width: 4%;"></div><span>15</span></div>
-                      <div><span>1 star</span><div class="tour-bar" style="width: 1%;"></div><span>2</span></div>
-                  </div>
-                  <p>★ We perform checks on reviews</p>
-              </div>
-          </div>
-          <div class="tour-review-search">
-              <input type="text" placeholder="Search reviews (e.g. guide)">
-              <select>
-                  <option>Sort by: Most recent</option>
-              </select>
-          </div>
-          <div class="tour-reviews-list" id="tourReviewsList">
-              <div class="tour-review">
-                  <span class="tour-stars">★★★★☆</span>
-                  <p class="tour-review-text">Wet but great experience...</p>
-                  <p class="tour-author">Stephen T. - Sep 2025</p>
-                  <p class="tour-comment">Wet but great experience. Nori, our guide was passionate and very knowledgeable. He tried to make us comfortable.</p>
-              </div>
-              <div class="tour-review">
-                  <span class="tour-stars">★★★★★</span>
-                  <p class="tour-review-text">Amazing tour!</p>
-                  <p class="tour-author">Maria L. - Oct 2025</p>
-                  <p class="tour-comment">The tour was fantastic, the guide was excellent and the sites were breathtaking.</p>
-              </div>
-          </div>
-          <button id="tourShowMoreBtn">Show more reviews</button>
-      </section>
+            <h2>Reviews</h2>
+            <div class="tour-review-summary">
+                <span class="tour-rating">4.5</span>
+                <span class="tour-stars">★★★★☆</span>
+                <span class="tour-review-count">based on 354 reviews</span>
+                <div class="tour-rating-details">
+                    <p>Total reviews and rating from Viator & Tripadvisor</p>
+                    <div class="tour-rating-bars">
+                        <div><span>5 stars</span><div class="tour-bar" style="width: 67.80%;"></div><span>240</span></div>
+                        <div><span>4 stars</span><div class="tour-bar" style="width: 21.75%;"></div><span>77</span></div>
+                        <div><span>3 stars</span><div class="tour-bar" style="width: 5.65%;"></div><span>20</span></div>
+                        <div><span>2 stars</span><div class="tour-bar" style="width: 4.24%;"></div><span>15</span></div>
+                        <div><span>1 star</span><div class="tour-bar" style="width: 0.56%;"></div><span>2</span></div>
+                    </div>
+                    <p>★ We perform checks on reviews</p>
+                </div>
+            </div>
+            <div class="tour-review-search">
+                <input type="text" placeholder="Search reviews (e.g. guide)" id="reviewSearchInput">
+                <select id="reviewSortSelect">
+                    <option value="recent">Sort by: Most recent</option>
+                    <option value="oldest">Sort by: Oldest</option>
+                    <option value="highest">Sort by: Highest rating</option>
+                    <option value="lowest">Sort by: Lowest rating</option>
+                </select>
+            </div>
+            <div class="tour-reviews-list" id="tourReviewsList">
+                <div class="tour-review" data-date="2025-09-01" data-rating="4">
+                    <span class="tour-stars">★★★★☆</span>
+                    <p class="tour-review-text">Wet but great experience...</p>
+                    <p class="tour-author">Stephen T. - Sep 2025</p>
+                    <p class="tour-comment">Wet but great experience. Nori, our guide was passionate and very knowledgeable. He tried to make us comfortable.</p>
+                </div>
+                <div class="tour-review" data-date="2025-10-01" data-rating="5">
+                    <span class="tour-stars">★★★★★</span>
+                    <p class="tour-review-text">Amazing tour!</p>
+                    <p class="tour-author">Maria L. - Oct 2025</p>
+                    <p class="tour-comment">The tour was fantastic, the guide was excellent and the sites were breathtaking.</p>
+                </div>
+                <div class="tour-review" data-date="2025-08-15" data-rating="3">
+                    <span class="tour-stars">★★★☆☆</span>
+                    <p class="tour-review-text">Okay tour.</p>
+                    <p class="tour-author">John D. - Aug 2025</p>
+                    <p class="tour-comment">It was average, guide was fine.</p>
+                </div>
+            </div>
+            <button id="tourShowMoreBtn">Show more reviews</button>
+            <button id="tourShowLessBtn" style="display: none;">Show less reviews</button>
+        </section>
     </main>
 
     <footer>

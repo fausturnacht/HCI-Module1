@@ -198,52 +198,207 @@ document.getElementById('closeModalv').addEventListener('click', function() {
     document.getElementById('morePhotos').style.display = 'none';
 });
 
-document.getElementById('tourShowMoreBtn').addEventListener('click', function() {
+document.addEventListener('DOMContentLoaded', function() {
+    const sortSelect = document.getElementById('reviewSortSelect');
     const reviewsList = document.getElementById('tourReviewsList');
+    const searchInput = document.getElementById('reviewSearchInput');
+    const showMoreBtn = document.getElementById('tourShowMoreBtn');
+    const showLessBtn = document.getElementById('tourShowLessBtn');
+    let displayedReviews = Array.from(reviewsList.querySelectorAll('.tour-review'));
+    const initialReviews = displayedReviews.slice(); // Store initial reviews
     const additionalReviews = [
         {
             stars: '★★★★★',
             text: 'Amazing tour!',
             author: 'Maria L. - Oct 2025',
-            comment: 'The tour was fantastic, the guide was excellent and the sites were breathtaking.'
+            comment: 'The tour was fantastic, the guide was excellent and the sites were breathtaking.',
+            date: '2025-10-01',
+            rating: 5
         },
         {
             stars: '★★★☆☆',
             text: 'Good but could improve...',
             author: 'John D. - Oct 2025',
-            comment: 'The experience was good, but the timing could be better organized.'
+            comment: 'The experience was good, but the timing could be better organized.',
+            date: '2025-10-02',
+            rating: 3
         },
         {
             stars: '★★★★☆',
             text: 'Enjoyable day out!',
             author: 'Lisa K. - Oct 2025',
-            comment: 'Had a wonderful time, the weather was perfect and the guide was very helpful.'
+            comment: 'Had a wonderful time, the weather was perfect and the guide was very helpful.',
+            date: '2025-10-03',
+            rating: 4
         },
         {
             stars: '★★★★★',
             text: 'Highly recommend!',
             author: 'Peter R. - Oct 2025',
-            comment: 'Best tour I’ve been on, the history was fascinating and the guide was top-notch.'
+            comment: 'Best tour I’ve been on, the history was fascinating and the guide was top-notch.',
+            date: '2025-10-04',
+            rating: 5
         },
         {
             stars: '★★☆☆☆',
             text: 'Average experience...',
             author: 'Emma S. - Oct 2025',
-            comment: 'It was okay, but the pace was a bit rushed for my liking.'
+            comment: 'It was okay, but the pace was a bit rushed for my liking.',
+            date: '2025-10-05',
+            rating: 2
         }
     ];
+    let currentIndex = 0;
 
-    additionalReviews.forEach(review => {
-        const reviewDiv = document.createElement('div');
-        reviewDiv.className = 'tour-review';
-        reviewDiv.innerHTML = `
-            <span class="tour-stars">${review.stars}</span>
-            <p class="tour-review-text">${review.text}</p>
-            <p class="tour-author">${review.author}</p>
-            <p class="tour-comment">${review.comment}</p>
-        `;
-        reviewsList.appendChild(reviewDiv);
+    // Function to get rating from stars (bilang ng ★)
+    function getRatingFromStars(starsElement) {
+        return starsElement.textContent.split('★').filter(s => s.length > 0).length;
+    }
+
+    // Function to parse date from author text (e.g., "Sep 2025" -> Date object)
+    function getDateFromAuthor(authorElement) {
+        const dateStr = authorElement.textContent.match(/([A-Za-z]{3})\s(\d{4})/);
+        if (dateStr) {
+            const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            const monthIndex = monthNames.indexOf(dateStr[1]);
+            if (monthIndex !== -1) {
+                return new Date(parseInt(dateStr[2]), monthIndex, 1);
+            }
+        }
+        return new Date(0);
+    }
+
+    // Function to filter reviews by search text
+    function filterReviews(searchTerm) {
+        const reviews = Array.from(reviewsList.querySelectorAll('.tour-review'));
+        if (searchTerm.trim() === '') {
+            // Show all displayed reviews when search is cleared
+            reviews.forEach(review => {
+                if (displayedReviews.includes(review)) {
+                    review.style.display = 'block';
+                } else {
+                    review.style.display = 'none';
+                }
+            });
+        } else {
+            // Filter based on search term
+            reviews.forEach(review => {
+                const text = review.textContent.toLowerCase();
+                const matches = text.includes(searchTerm.toLowerCase());
+                review.style.display = matches && displayedReviews.includes(review) ? 'block' : 'none';
+            });
+        }
+    }
+
+    // Main sorting function
+    function sortReviews(sortBy) {
+        const reviews = Array.from(reviewsList.querySelectorAll('.tour-review'));
+        const visibleReviews = reviews.filter(review => displayedReviews.includes(review));
+
+        visibleReviews.sort((a, b) => {
+            let aValue, bValue;
+            if (sortBy === 'recent' || sortBy === 'oldest') {
+                const aDate = getDateFromAuthor(a.querySelector('.tour-author')) || new Date(0);
+                const bDate = getDateFromAuthor(b.querySelector('.tour-author')) || new Date(0);
+                return sortBy === 'recent' ? bDate - aDate : aDate - bDate;
+            } else if (sortBy === 'highest' || sortBy === 'lowest') {
+                const aStars = a.getAttribute('data-rating') || getRatingFromStars(a.querySelector('.tour-stars'));
+                const bStars = b.getAttribute('data-rating') || getRatingFromStars(b.querySelector('.tour-stars'));
+                aValue = parseInt(aStars);
+                bValue = parseInt(bStars);
+                return sortBy === 'highest' ? bValue - aValue : aValue - bValue;
+            }
+            return 0;
+        });
+
+        reviewsList.innerHTML = '';
+        visibleReviews.forEach(review => {
+            reviewsList.appendChild(review);
+        });
+
+        if (searchInput.value) {
+            filterReviews(searchInput.value);
+        }
+    }
+
+    // Function to add reviews (3 at a time)
+    function addReviews() {
+        const reviewsToAdd = additionalReviews.slice(currentIndex, currentIndex + 3);
+        reviewsToAdd.forEach(review => {
+            const reviewDiv = document.createElement('div');
+            reviewDiv.className = 'tour-review';
+            reviewDiv.setAttribute('data-date', review.date);
+            reviewDiv.setAttribute('data-rating', review.rating);
+            reviewDiv.innerHTML = `
+                <span class="tour-stars">${review.stars}</span>
+                <p class="tour-review-text">${review.text}</p>
+                <p class="tour-author">${review.author}</p>
+                <p class="tour-comment">${review.comment}</p>
+            `;
+            reviewsList.appendChild(reviewDiv);
+            displayedReviews.push(reviewDiv);
+        });
+        currentIndex += reviewsToAdd.length;
+
+        // Update button visibility
+        showMoreBtn.style.display = currentIndex < additionalReviews.length ? 'block' : 'none';
+        showLessBtn.style.display = displayedReviews.length > initialReviews.length ? 'block' : 'none';
+
+        // Re-sort after adding reviews
+        const currentSort = sortSelect.value;
+        if (currentSort) {
+            sortReviews(currentSort);
+        }
+    }
+
+    // Function to remove reviews (3 at a time)
+    function removeReviews() {
+        const reviewsToRemove = displayedReviews.slice(-3).filter(review => !initialReviews.includes(review));
+        reviewsToRemove.forEach(review => {
+            review.remove();
+            displayedReviews = displayedReviews.filter(r => r !== review);
+        });
+
+        // Adjust currentIndex
+        currentIndex = Math.max(0, currentIndex - reviewsToRemove.length);
+
+        // Update button visibility
+        showMoreBtn.style.display = currentIndex < additionalReviews.length ? 'block' : 'none';
+        showLessBtn.style.display = displayedReviews.length > initialReviews.length ? 'block' : 'none';
+
+        // Re-sort after removing reviews
+        const currentSort = sortSelect.value;
+        if (currentSort) {
+            sortReviews(currentSort);
+        }
+    }
+
+    // Show More button event listener
+    showMoreBtn.addEventListener('click', addReviews);
+
+    // Show Less button event listener
+    showLessBtn.addEventListener('click', removeReviews);
+
+    // Sort select event listener
+    sortSelect.addEventListener('change', function() {
+        const sortValue = this.value;
+        sortReviews(sortValue);
     });
 
-    this.style.display = 'none'; // Hide button after showing more reviews
+    // Search input event listener
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value;
+        filterReviews(searchTerm);
+        const currentSort = sortSelect.value;
+        if (currentSort) {
+            setTimeout(() => sortReviews(currentSort), 100);
+        }
+    });
+
+    // Initial sort (default to most recent)
+    sortReviews('recent');
+
+    // Initial button visibility
+    showMoreBtn.style.display = additionalReviews.length > 0 ? 'block' : 'none';
+    showLessBtn.style.display = displayedReviews.length > initialReviews.length ? 'block' : 'none';
 });

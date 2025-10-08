@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             tourTitleContainer.innerHTML = data.title; // FIX: Property is 'title'
 
             const tourRatingTopContainer = document.getElementById('tour-rating-top');
-            tourRatingTopContainer.innerHTML = `<span> ⭐ ${data.reviews.combinedAverageRating} </span> Based on ${data.reviews.totalReviews} reviews`;
+            tourRatingTopContainer.innerHTML = `<span> ⭐ ${data.reviews.combinedAverageRating} </span> | Based on ${data.reviews.totalReviews} reviews`;
 
             const tourMainImageContainer = document.getElementById('mainImg');
             // Safely get a large image, fallback to placeholder

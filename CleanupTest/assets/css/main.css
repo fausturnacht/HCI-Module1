@@ -33,8 +33,7 @@ body{
 
 p{
     color: rgba(240,240,240,.9);
-    font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 /* ===== Header / nav (glass) ===== */

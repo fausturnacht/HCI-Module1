@@ -311,7 +311,7 @@ body {
 .tour-details h2, .tour-options h2, .reviews h2, .itinerary-section h2 {
     margin-bottom: 15px;
     font-size: 1.8em;
-    text-shadow: 0 8px 26px rgba(0, 0, 0, .4);
+    text-shadow: 0 8px 26px rgba(255, 255, 255, 1);
 }
 
 .tour-details ul {
@@ -556,7 +556,7 @@ body {
 .additional-info-section h2 {
     margin-bottom: 15px;
     font-size: 1.8em;
-    text-shadow: 0 8px 26px rgba(0, 0, 0, .4);
+    text-shadow: 0 8px 26px rgba(255, 255, 255, 0.4);
 }
 
 .additional-info-section ul {
@@ -822,12 +822,12 @@ body {
 .booking-details h2 {
   font-size: 20px;
   margin: 0 0 5px;
-  color: #000;
+  color: #ffffff;
 }
 
 .discount-note {
   font-size: 12px;
-  color: #000;
+  color: #ffffff;
 }
 
 .row {
@@ -851,7 +851,7 @@ label {
   margin-bottom: 2px;
   font-weight: bold;
   font-size: 15px;
-  color: #000
+  color: #ffffff
 }
 
 input[type="text"], select {

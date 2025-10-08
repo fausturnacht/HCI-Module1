@@ -1,0 +1,22 @@
+.login-wrap{max-width:440px;margin:40px auto;padding:26px 22px;background:#fff;border-radius:16px;border:1px solid #e6eef6;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.login-title{color:var(--brand);font-size:40px;font-weight:900;margin-bottom:8px}
+.login-sub{color:#6a8cab;margin-bottom:18px;font-weight:600}
+.field{margin:14px 0 12px}
+.label{display:block;font-size:13px;color:#6a8cab;margin:0 0 6px 6px;font-weight:700}
+.input-wrap{position:relative;display:flex;align-items:center}
+.input{width:100%;padding:14px 14px 14px 44px;border-radius:10px;border:2px solid #cfe0f7;background:#fff;color:#0a2b4a;font-size:16px;outline:none;transition:border-color .15s ease}
+.input:focus{border-color:var(--brand)}
+.icon{position:absolute;left:12px;color:#5b93f0}
+.row-flex{display:flex;justify-content:space-between;margin:6px 2px 16px}
+.forgot{color:#6a8cab;font-size:12px;text-decoration:none}
+.forgot:hover{color:#3d78ea}
+.btn-primary{width:100%;background:var(--brand);color:#fff;border:0;border-radius:10px;padding:12px 16px;font-weight:800;box-shadow:0 8px 24px rgba(14,96,214,.35);cursor:pointer}
+.divider{display:flex;align-items:center;gap:12px;color:#8aa2b8;font-size:12px;margin:16px 0}
+.divider::before,.divider::after{content:"";height:1px;background:#d7e3f5;flex:1}
+.social-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sbtn{display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;border-radius:10px;background:#fff;border:2px solid #e4ecf8;cursor:pointer;font-weight:700}
+.sbtn:hover{border-color:#cfe0f7}
+.sicon{width:18px;height:18px}
+.register{text-align:center;margin-top:18px;color:#6a8cab;font-size:13px}
+.register a{color:#0e60d6;font-weight:800;text-decoration:none}
+.register a:hover{text-decoration:underline}

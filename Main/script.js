@@ -30,12 +30,9 @@ fetch('https://places-api.foursquare.com/places/search?', options)
   .then(res => console.log(res))
   .catch(err => console.error(err)); */
 
-
-  //SAMPLE
-
-  const params = new URLSearchParams({
+/*  const params = new URLSearchParams({
   query: 'coffee', // Search term (e.g., coffee shops)
-});
+}); */
 
 
 function addressAutocomplete(containerElement, callback, options) {
@@ -243,9 +240,6 @@ addressAutocomplete(document.getElementById("autocomplete-container"), (data) =>
 }, {
 	placeholder: "Enter an address here"
 });
-
-
-
 
 // Show Tabs
 const tabs = document.getElementById('tabs');

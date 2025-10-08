@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderSync - Tour Details</title>
+    <!-- Assuming a consolidated stylesheet, update if necessary -->
+    <link rel="stylesheet" href="assets/css/pages/destination.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <special-header></special-header>
+
+  <div class="floating-container">
+      <div class="booking-details">
+        <h2 id="tour-price-display"></h2>
+        <p><span class="discount-note">ⓘ Discounted rates for children</span></p>
+        <div class="row">
+          <div class="col">
+            <label for="datePicker">Date</label>
+            <input type="text" id="datePicker" readonly placeholder="Select a date">
+            <div id="calendarContainer" class="calendar-container"></div>
+          </div>
+          <div class="col">
+            <label for="travelers">Travelers</label>
+            <select id="travelers">
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col full-width">
+            <label for="timePicker">Start time</label>
+            <input type="text" id="timePicker" readonly placeholder="Select time">
+            <div id="timePickerContainer" class="time-picker-container">
+              <div class="time-picker">
+                <div class="time-dial">
+                  <input type="number" id="hourInput" min="1" max="12" placeholder="HH">
+                  <span>:</span>
+                  <input type="number" id="minuteInput" min="0" max="59" placeholder="MM">
+                  <select id="ampmSelect">
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                  </select>
+                </div>
+                <button id="confirmTime">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="check-availability">Check Availability</button>
+        <div class="options">
+          <p><span class="check-mark">✔</span> Free cancellation up to 24 hours before the experience starts (local time)</p>
+          <p><span class="check-mark">✔</span> Reserve Now and Pay Later - Secure your spot while staying flexible</p>
+        </div>
+        <div class="book-ahead">
+          <span class="info-icon">📍</span> Book ahead: On average, this is booked 23 days in advance.
+        </div>
+      </div>
+  </div>
+
+    <main class="tour-page">
+        <section class="tour-hero">
+            <div class="tour-details-container">
+                <div class="tour-title">
+                    <h1 id="tour-title"></h1>
+                    <div class="ratingtop" id="tour-rating-top">
+                    </div>
+                </div>
+                <section class="gallery">
+                    <div class="thumbnail-container" id="thumbnail-container">
+                        <!-- Thumbnails will be dynamically inserted here -->
+                    </div>
+                    <div class="main-image">
+                        <img src="" alt="Main tour image" id="mainImg">
+                        <div class="button-container">
+                            <button class="share-btn">Share</button>
+                            <button class="wishlist-btn">Add to Wishlist</button>
+                        </div>
+                        <div class="share-options" id="shareOptions">
+                            <span>Share Link</span>
+                            <span>Email</span>
+                        </div>
+                        <div class="wishlist-message" id="wishlistMessage"></div>
+                        <button class="prev-btn">&lt;</button>
+                        <button class="next-btn">&gt;</button>
+                    </div>
+                </section>
+                <div class="tour-info" id="tour-info-features">
+                    <!-- Tour features like duration, pickup, etc. will be inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="tour-details">
+            <div class="overview">
+                <h2>Overview</h2>
+                <p id="tour-overview-text"></p>
+            </div>
+            <div class="highlights">
+                <h2>Highlights</h2>
+                <ul id="tour-highlights-list">
+                    <!-- Highlights will be dynamically inserted here -->
+                </ul>
+            </div>
+            <div class="inclusions">
+                <h2>Inclusions</h2>
+                <ul id="tour-inclusions-list">
+                    <!-- Inclusions will be dynamically inserted here -->
+                </ul>
+            </div>
+        </section>
+
+        <section class="tour-options">
+          <h2>Available Tour Options</h2>
+          <div id="tour-options-container">
+            <!-- Tour option cards will be dynamically inserted here -->
+          </div>
+      </section>
+        <section class="reviews">
+          <h2>Why travelers loved this <span class="highlight">🏞️</span></h2>
+          <div class="rating" id="reviews-rating-summary"></div>
+          <div class="filter-buttons">
+              <button class="filter active">All</button>
+              <button class="filter">Informative</button>
+              <button class="filter">Great guides</button>
+              <button class="filter">Great drivers</button>
+          </div>
+          <div class="review-container">
+              <button class="nav prev">◄</button>
+              <div class="review-wrapper" id="reviews-wrapper">
+                  <!-- Review cards will be dynamically inserted here -->
+              </div>
+              <button class="nav next">►</button>
+          </div>
+      </section>
+
+        <section class="itinerary-section">
+          <h2>Itinerary</h2>
+          <div class="itinerary-placeholder">
+              <div id="itinerary-intro"></div>
+              <ol id="itinerary-list">
+                  <!-- Itinerary items will be dynamically inserted here -->
+              </ol>
+          </div>
+      </section>
+
+      <section class="additional-info-section">
+          <h2>Additional Info</h2>
+          <ul id="additional-info-list">
+              <!-- Additional info list items will be dynamically inserted here -->
+          </ul>
+          <button id="showMoreBtn">Show more</button>
+          <p id="tour-supplier"></p>
+          <div id="moreInfo" class="modal">
+              <div class="modal-content">
+                  <span id="closeModal">&times;</span>
+                  <h2>Additional Info</h2>
+                  <ul id="additional-info-modal-list">
+                  </ul>
+              </div>
+          </div>
+      </section>
+
+      <section class="traveler-photos-section">
+          <h2>Traveler Photos</h2>
+          <div class="photo-grid" id="traveler-photos-grid">
+              <!-- Traveler photos will be dynamically inserted here -->
+          </div>
+          <div id="morePhotos" class="modalv">
+              <div class="modal-contentv">
+                  <span id="closeModalv">&times;</span>
+                  <h2>Traveler Photos</h2>
+                  <div class="photo-grid" id="traveler-photos-modal-grid">
+                  </div>
+              </div>
+          </div>
+          <button id="showMoreBtnv">Show more</button>
+      </section>
+
+      <section class="tour-reviews-section">
+          <h2>Reviews</h2>
+          <div class="tour-review-summary" id="tour-review-summary-container">
+              <!-- Review summary will be dynamically inserted here -->
+          </div>
+          <div class="tour-review-search">
+              <input type="text" placeholder="Search reviews (e.g. guide)">
+              <select>
+                  <option>Sort by: Most recent</option>
+              </select>
+          </div>
+          <div class="tour-reviews-list" id="tourReviewsList">
+              <!-- Detailed reviews will be dynamically inserted here -->
+          </div>
+          <button id="tourShowMoreBtn">Show more reviews</button>
+      </section>
+    </main>
+
+    <special-footer></special-footer>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/pages/destination.js"></script>
+</body>
+</html>

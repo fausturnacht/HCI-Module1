@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tourism Explorer</title>
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/footer.css">
+<link rel="stylesheet" href="assets/css/pages/home.css">
+</head>
+<body class="home-background">
+
+  <!-- ===== HEADER ===== -->
+   <special-header></special-header>
+  <!-- ===== HOME ===== -->
+   <main id="home" class="page show">
+    <section class="hero">
+        <h1>Dream. Book. Go.</h1>
+        <p class="sub">Where Plans Become Places</p>
+
+        <!-- ===== PILLTABS ===== -->
+        <special-pilltabs></special-pilltabs>
+
+        <div class="search-panel">
+        <div class="sr-grid">
+          <div class="autocomplete-container" id="autocomplete-container"> 
+          </div>
+          <div class="search-button">
+            <button class="btn" onclick="search()">Search</button>
+          </div>
+          </div>
+        </div>
+        
+    </section>
+
+    
+    <!-- TABS -->
+    <!-- Home -->
+    <!-- Top Deals -->
+    <div id="home-tab">
+        <section class="section">
+        <h2>Today's Top Deals</h2>
+        <div class="cards" id="top-deals">
+        </div>
+        </section>
+
+        <!-- Mosaic -->
+        <section class="section">
+        <h2>Top Destinations</h2>
+        <div class="mosaic">
+            <a class="tile big" href="#" onclick="openTopDestination('PARIS'); return false;"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1600&auto=format&fit=crop"><span>PARIS</span></a>
+            <a class="tile" href="#" onclick="openTopDestination('MALDIVES'); return false;"><img src="https://www.travelandleisure.com/thmb/N_r_xMvHfYjCHgZE-9bAWNiVAwU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-conrad-maldives-rangali-island-MALDIVESHOTELS1024-6dfdeac00fec4f69893e7576b5896da9.jpg"><span>MALDIVES</span></a>
+            <a class="tile" href="#" onclick="openTopDestination('LONDON'); return false;"><img src="https://www.visitlondon.com/-/media/images/london/visit/general-london/westminster-at-dusk-london-1280x720.jpg?rev=3c05b9713c4b4405a7ab61aaeba53636&mw=800&hash=061A930869789795BC82B1A060E14562"><span>LONDON</span></a>
+            <a class="tile tall" href="#" onclick="openTopDestination('SAHARA'); return false;"><img src="https://wander-lush.org/wp-content/uploads/2022/12/Most-beautiful-places-in-Morocco-DP-Sahara-Desert.jpg"><span>SAHARA</span></a>
+            <a class="tile" href="#" onclick="openTopDestination('TOKYO'); return false;"><img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1600&auto=format&fit=crop"><span>TOKYO</span></a>
+            <a class="tile" href="#" onclick="openTopDestination('BEIJING'); return false;"><img src="https://www.asiaodysseytravel.com/images/china-tours/group-tours/beijing-jinshanling-great-wall-700-01.jpg"><span>BEIJING</span></a>
+            <a class="tile big" href="#" onclick="openTopDestination('LOS ANGELES'); return false;"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop"><span>LOS ANGELES</span></a>
+        </div>
+        </section>
+    </div>
+
+    <div id="destinations-tab"> <!-- Display none -->
+        <section class="section">
+        <h2>Places of Interest</h2>
+        <div id=destination-search-results></div>
+        </section>
+    </div>
+
+    <div id="packages-tab"> <!-- Display none -->
+        <section class="section">
+        <h2>Available Packages</h2>
+        <div id=tour-search-results></div>
+        <p></p>
+        </section>
+    </div>
+        
+    <div id="hotels-tab"> <!-- Display none -->
+        <section class="section">
+        <h2>Accomodating Hotels</h2>
+        <div id=hotel-search-results></div>
+        <p></p>
+        </section>
+    </div>
+
+    <div id="flights-tab"> <!-- Display none -->
+        <section class="section">
+        <h2>Available Flights</h2>
+        <div id=flights-search-results></div>
+        </section>
+    </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <special-footer></special-footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

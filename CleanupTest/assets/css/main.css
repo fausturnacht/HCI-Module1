@@ -1,0 +1,273 @@
+/* ===== Reset & tokens ===== */
+*{margin:0;
+  padding:0;
+  box-sizing:border-box
+}
+
+:root{
+  --brand:#0e60d6;
+  --brand-2:#2ecabd;
+  --ink:#0b2540;
+  --muted:#5b7a8a;
+  --glass:rgba(255,255,255,.15);
+  --glass-b:#ffffff33;
+  --card:#ffffff;
+  --card-b:#e8f1f6;
+
+  --navy:#1d2a5a;
+  --navy-2:#27356c;
+  --sky:#e9f4ff;
+}
+
+html,body{
+  height:100%
+}
+
+body{
+  font-family: "Segoe UI",system-ui,Arial,sans-serif; color:var(--ink);
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.35)),
+    url("../images/JapanLandscape.jpg") center/cover fixed no-repeat;
+    display:flex; flex-direction:column; min-height:100vh;
+}
+
+p{
+    color: rgba(240,240,240,.9);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* ===== Header / nav (glass) ===== */
+.header{
+  position:sticky; top:0; z-index:20;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:10px 18px;
+  backdrop-filter: blur(10px);
+  background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.25));
+  border-bottom:1px solid var(--glass-b);
+}
+
+.brand{
+  display:flex; 
+  align-items:center; 
+  gap:10px; 
+  color:#fff
+}
+
+.brand img{
+  height:48px; 
+  width:auto
+}
+
+.brand span{
+  font-weight:800; 
+  letter-spacing:.3px
+}
+.nav{
+  display:flex; 
+  gap:10px; 
+  flex-wrap:wrap
+}
+.nav a{
+  color:#eaf7ff; 
+  text-decoration:none; 
+  font-weight:600;
+  padding:8px 12px; 
+  border-radius:999px; 
+  border:1px solid #ffffff2e;
+  background:rgba(255,255,255,.12);
+  transition:.15s;
+}
+.nav a:hover,.nav a.active{
+  background:#ffffff25
+}
+
+/* ===== Pages controller ===== */
+.page{display:none}
+.show{display:block}
+
+/* ===== Hero ===== */
+.hero{
+  max-width:1200px; 
+  margin:0 auto; 
+  padding:56px 18px 28px; 
+  color:#fff; 
+  text-align:center;
+}
+
+.hero h1{
+  font-size:clamp(28px,5vw,56px); 
+  text-shadow:0 8px 28px rgba(0,0,0,.5)
+}
+
+.hero p.sub{
+  margin-top:6px;
+  opacity:.92
+}
+
+.pilltabs{
+  margin:22px auto 0; 
+  display:inline-flex; 
+  gap:6px; 
+  padding:6px; 
+  border-radius:999px;
+  background:rgba(255,255,255,.12); 
+  border:1px solid var(--glass-b);
+}
+.pilltabs button{
+  background:transparent; 
+  color:#fff; 
+  border:0; 
+  padding:8px 14px; 
+  border-radius:999px; 
+  cursor:pointer; 
+  font-weight:700
+}
+
+.pilltabs button.active{
+  background:#fff;
+  color:#0b2540
+}
+
+/* ===== Search panel (glass) ===== */
+.search-panel{
+max-width:1000px; 
+  margin:12px auto 40px;
+  background:var(--glass); 
+  border:1px solid var(--glass-b); 
+  backdrop-filter: blur(8px);
+  border-radius:16px;
+  padding:20px; color:#fff; 
+  box-shadow:0 18px 48px rgba(0,0,0,.35);
+  transform: none;
+}
+.sr-grid{display:grid; gap:20px; grid-template-columns:repeat(6,2fr); grid-template-rows:1fr}
+.sr-item{display:flex; flex-direction:column; gap:6px}
+.sr-item label{font-size:12px; color:#def6ff}
+
+.autocomplete-container{
+  position: relative; /* For dropdown positioning */
+  grid-column: 1/6;
+  grid-row: 1;
+}
+
+/* default inputs in panel */
+.sr-item input,.sr-item select{
+  padding:10px 12px; 
+  border-radius:10px; 
+  border:1px solid #ffffff55;
+  background:rgba(255,255,255,.2); 
+  color:#fff; 
+  outline:none
+}
+
+.sr-filters {
+  display: none; /* Hidden by default */
+  grid-column: 2; /* Span all columns in the grid */
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 10px;
+  }
+
+.search-panel.filters-open .sr-filters {
+  display: block; /* Show when parent has the .filters-open class */
+  }
+
+.sr-filters h4 {
+  margin: 0 0 10px;
+  font-weight: 600;
+  }
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  }
+
+.filter-group label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  }
+
+/* Autocomplete input and number fields are white boxes */
+.autocomplete-container input, .sr-item input[type="number"]{
+  width: 100%;
+  font-size: 16px;
+  background:#fff; 
+  color:#111;
+  border:1px solid #ccc;
+  padding:10px 12px; 
+  border-radius:10px; 
+  outline:none;
+  transition: border-radius .15s ease-in-out;
+}
+
+.autocomplete-container:focus-within input {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.1);
+  border-top: none;
+  z-index: 99;
+  top: 90%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  color: #111;
+  border-radius: 0 0 10px 10px;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.autocomplete-items div:hover, .autocomplete-items .autocomplete-active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.search-button, .filter-button, .view-info, .sr-findRooms{display:flex; align-items:end; justify-content:center;}
+.search-button, .filter-button{align-items: center;}
+
+.clear-button {
+  color: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  
+  position: absolute;
+  right: 5px;
+  top: 0;
+
+  height: 65%;
+  display: none;
+  align-items: center;
+}
+
+.clear-button.visible {
+  display: flex;
+}
+
+
+.clear-button:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.btn{
+  background:var(--brand-2); 
+  color:#08324a; 
+  border:0; 
+  font-weight:800;
+  padding:12px 18px; 
+  border-radius:12px; 
+  cursor:pointer; 
+  box-shadow:0 10px 24px rgba(0,0,0,.25); 
+  transition:.15s
+}
+.btn:hover{transform:translateY(-1px)}
+
+.hidden{display:none !important}

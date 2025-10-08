@@ -1,0 +1,21 @@
+.brochure{max-width:1100px; margin:26px auto 60px; padding:0 18px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px}
+@media (max-width:960px){ .brochure{grid-template-columns:1fr} }
+.b-card{background:#fff; border:1px solid #e8eef6; border-radius:16px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,.25); min-height:520px; position:relative}
+.b-left{padding:24px 22px}
+.b-left h3{color:var(--navy); font-size:26px; letter-spacing:.5px; margin-bottom:12px}
+.b-left p{color:#27425e; line-height:1.6; margin-bottom:14px}
+.b-left .thumb{width:100%; height:160px; border-radius:10px; object-fit:cover; border:1px solid #dde8f4}
+.b-mid{background:var(--navy); color:#fff; padding:28px 22px; border-radius:20px; display:flex; flex-direction:column; justify-content:space-between}
+.b-mid .title{font-weight:900; font-size:clamp(24px,3vw,34px); text-align:center; line-height:1.2; padding:18px 8px; border-radius:22px; background:linear-gradient(180deg, var(--navy), var(--navy-2))}
+.contact-box{background:var(--navy-2); border-radius:22px; padding:22px 18px; text-align:center; margin-top:20px; border:1px solid rgba(255,255,255,.15)}
+.contact-box h4{letter-spacing:.5px; font-size:18px; margin-bottom:12px}
+.contact-item{margin:8px 0; font-weight:700}
+.contact-item a{color:#fff; text-decoration:none}
+.contact-item a:hover{text-decoration:underline}
+.website{margin-top:14px; font-size:14px; opacity:.9}
+.b-right{display:flex; flex-direction:column}
+.b-right .top{background:var(--navy); color:#fff; text-align:center; padding:26px 16px; border-radius:16px 16px 0 0}
+.b-right .top h3{font-size:28px; letter-spacing:.5px}
+.b-right .top p{opacity:.9; margin-top:6px}
+.b-right .photo{flex:1; background:#fff; border:1px solid #e8eef6; border-top:0; border-radius:0 0 16px 16px; overflow:hidden}
+.b-right .photo img{width:100%; height:100%; object-fit:cover; display:block}

@@ -40,38 +40,10 @@
 
       <div class="search-panel">
         <div class="sr-grid">
-          <div class="sr-item">
-            <label>Check-in</label>
-            <input type="date">
-          </div>
-          <div class="sr-item">
-            <label>Check-out</label>
-            <input type="date">
-          </div>
-          <!-- manual number inputs -->
-          <div class="sr-item">
-            <label for="rooms">Rooms</label>
-            <input id="rooms" type="number" min="1" max="20" value="1" inputmode="numeric">
-          </div>
-          <div class="sr-item">
-            <label for="adults">Adults</label>
-            <input id="adults" type="number" min="1" max="20" value="2" inputmode="numeric">
-          </div>
-          <div class="sr-item">
-            <label for="children">Children</label>
-            <input id="children" type="number" min="0" max="20" value="0" inputmode="numeric">
-          </div>
-          <div class="sr-findRooms">
-            <button class="btn" onclick="go('login')">Find Rooms</button>
-          </div>
-
           <div class="autocomplete-container" id="autocomplete-container"> 
             <!--<input id="input" type="text" placeholder="Search destinations, hotels, etc.">-->
           </div>
           
-          <div class="filter-button">
-            <button class="btn" onclick="showFilter()">Filters</button>
-          </div>
 
           <div class="search-button">
             <button class="btn" onclick="searchDestination()">Search</button>

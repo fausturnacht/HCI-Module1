@@ -135,7 +135,7 @@ max-width:1000px;
   box-shadow:0 18px 48px rgba(0,0,0,.35);
   transform: none;
 }
-.sr-grid{display:grid; gap:20px; grid-template-columns:repeat(6,2fr); grid-template-rows: 2fr 2fr;}
+.sr-grid{display:grid; gap:20px; grid-template-columns:repeat(4,2fr); grid-template-rows: 2fr 2fr;}
 .sr-item{display:flex; flex-direction:column; gap:6px}
 .sr-item label{font-size:12px; color:#def6ff}
 

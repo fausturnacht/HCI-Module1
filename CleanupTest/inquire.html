@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tourism Explorer</title>
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/footer.css">
+<link rel="stylesheet" href="assets/css/pages/inquire.css">
+</head>
+<body>
+    <special-header></special-header>
+  <section id="inquire" class="active">
+    <div class="panel">
+      <button class="backbtn" onclick="go('home')">← Back</button>
+      <div class="form">
+        <div><label>Name</label><input type="text"></div>
+        <div><label>Email</label><input type="email"></div>
+        <div class="full"><label>Trip details</label><textarea rows="6" placeholder="Dates, destination, budget…"></textarea></div>
+        <div class="full"><button class="btn" style="width:100%">Submit Inquiry</button></div>
+      </div>
+    </div>
+  </section>
+  <special-footer></special-footer>
+    <script src="assets/js/main.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>

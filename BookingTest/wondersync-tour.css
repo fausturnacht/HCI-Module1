@@ -724,12 +724,14 @@ body {
 
 .tour-rating-bars {
     margin: 10px 0;
+    max-width: 300px;
+    margin-left: auto;
 }
 
 .tour-rating-bars div {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     margin: 5px 0;
 }
 
@@ -737,19 +739,25 @@ body {
     width: 70px;
     text-align: left;
     margin-right: 10px;
+    font-size: 0.9em;
+    white-space: nowrap;
 }
 
 .tour-bar {
-    flex-grow: 1;
-    height: 10px;
+    flex-grow: 0;
+    height: 12px;
     background-color: #00cc66;
     margin: 0 10px;
     border-radius: 5px;
+    min-width: 5px;
+    transition: width 0.3s ease;
 }
 
 .tour-rating-bars span:last-child {
     width: 40px;
     text-align: left;
+    font-size: 0.9em;
+    margin-left: 10px;
 }
 
 .tour-review-search {
@@ -776,6 +784,7 @@ body {
     padding: 10px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
+    transition: opacity 0.3s ease;
 }
 
 .tour-reviews-list .tour-stars {
@@ -784,11 +793,21 @@ body {
 
 .tour-reviews-list .tour-author {
     font-style: italic;
-    color: #666;
+    color: #000000;
     margin-top: 5px;
 }
 
 .tour-reviews-section button {
+    display: block;
+    margin: 10px auto;
+    padding: 8px 15px;
+    background: var(--glass-b);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.tour-reviews-section #tourShowLessBtn {
     display: block;
     margin: 10px auto;
     padding: 8px 15px;

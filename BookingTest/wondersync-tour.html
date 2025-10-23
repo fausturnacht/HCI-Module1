@@ -79,6 +79,8 @@
   </div>
 </div>
 
+<!-- ===== CONTACT & PRICE GUARANTEE ===== -->
+ 
     <div class="contact-section">
         <div class="contact-option">
             <img src="https://i.pinimg.com/564x/a4/e1/1b/a4e11b78e6c94821f27832d9c623a805.jpg" alt="Call" class="contact-icon">
@@ -95,6 +97,8 @@
             <span>Lowest Price Guarantee</span>
         </div>
         </div>
+
+<!-- ===== MAIN CONTENT ===== -->
 
     <main class="tour-page">
         <section class="tour-hero">
@@ -121,8 +125,20 @@
                             <button class="wishlist-btn">Add to Wishlist</button>
                         </div>
                         <div class="share-options" id="shareOptions">
-                            <span>Share Link</span>
-                            <span>Email</span>
+                            <span>
+                                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                </svg>
+                                Share Link
+                            </span>
+                            <span>
+                                <svg class="email-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                Email
+                            </span>
                         </div>
                         <div class="wishlist-message" id="wishlistMessage"></div>
                         <button class="prev-btn">&lt;</button>
@@ -239,6 +255,32 @@
             <h2 class="itinerary-title">Itinerary</h2>
             <div class="itinerary-intro">
                 Choose from a morning or afternoon tour that starts with pickup from your Manila hotel, then travel with your experienced guide into the heart of the Philippine's financial center: Makati.
+            </div>
+            <div class="add-ons-section">
+                <h3 class="add-ons-title">Available Add-ons</h3>
+                <div class="add-ons-list">
+                    <div class="add-on-item">
+                        <label>
+                            <input type="checkbox" class="add-on-checkbox" data-id="1" data-title="Cultural Workshop" data-duration="45 minutes" data-price="1500" data-image="https://res.klook.com/image/upload/w_500,h_313,c_fill,q_85/activities/uqthqfdi1ppcl8cxda0x.jpg" data-summary="Experience a hands-on Filipino cultural workshop, including traditional crafts and activities." data-full-desc="Join a 45-minute workshop to learn about Filipino culture through crafts like weaving or pottery, guided by local artisans.">
+                            Cultural Workshop - ₱1,500
+                        </label>
+                    </div>
+                    <div class="add-on-item">
+                        <label>
+                            <input type="checkbox" class="add-on-checkbox" data-id="2" data-title="Local Food Tasting" data-duration="30 minutes" data-price="750" data-image="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Philippine_Food.jpg/500px-Philippine_Food.jpg" data-summary="Savor authentic Filipino dishes at a local eatery." data-full-desc="Enjoy a 30-minute food tasting session featuring iconic Filipino dishes like adobo and halo-halo, with insights into culinary traditions.">
+                            Local Food Tasting - ₱750
+                        </label>
+                    </div>
+                    <div class="add-on-item">
+                        <label>
+                            <input type="checkbox" class="add-on-checkbox" data-id="3" data-title="Guided Museum Tour" data-duration="60 minutes" data-price="2000" data-image="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/10/7e/8f/c0.jpg" data-summary="Explore a local museum with a knowledgeable guide." data-full-desc="Take a 60-minute guided tour through a Manila museum, diving into the rich history and cultural artifacts of the Philippines.">
+                            Guided Museum Tour - ₱2,000
+                        </label>
+                    </div>
+                </div>
+                <div class="add-ons-total">
+                    Total Additional Cost: ₱<span id="addOnsTotal">0</span>
+                </div>
             </div>
             <div class="itinerary-timeline">
                 <ol class="timeline-list">

@@ -3,6 +3,26 @@ let currentIndex = 0;
 const thumbnails = document.querySelectorAll('.thumbnail');
 const mainImg = document.getElementById('mainImg');
 
+// Description toggle functionality
+function toggleDescription(button) {
+    const fullDesc = button.nextElementSibling;
+    const isHidden = fullDesc.classList.contains('hidden');
+
+    if (isHidden) {
+        fullDesc.classList.remove('hidden');
+        fullDesc.style.maxHeight = fullDesc.scrollHeight + 'px';
+        button.textContent = 'Read Less';
+        button.style.background = '#0aa0a0ff';
+    } else {
+        fullDesc.style.maxHeight = '0';
+        setTimeout(() => {
+            fullDesc.classList.add('hidden');
+        }, 300);
+        button.textContent = 'Read More';
+        button.style.background = '';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Share button functionality
     const shareBtn = document.querySelector('.share-btn');
@@ -340,7 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return sortBy === 'recent' ? bDate - aDate : aDate - bDate;
             } else if (sortBy === 'highest' || sortBy === 'lowest') {
                 const aStars = a.getAttribute('data-rating') || getRatingFromStars(a.querySelector('.tour-stars'));
-                const bStars = b.getAttribute('data-rating') || getRatingFromStars(b.querySelector('.tour-stars'));
+                const bStars = b.getAttribute('data-rating') || getRatingFromStars(a.querySelector('.tour-stars'));
                 aValue = parseInt(aStars);
                 bValue = parseInt(bStars);
                 return sortBy === 'highest' ? bValue - aValue : aValue - bValue;
@@ -435,26 +455,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showLessBtn.style.display = displayedReviews.length > initialReviews.length ? 'block' : 'none';
     }
 
-    // Description toggle functionality
-    function toggleDescription(button) {
-        const fullDesc = button.nextElementSibling;
-        const isHidden = fullDesc.classList.contains('hidden');
-
-        if (isHidden) {
-            fullDesc.classList.remove('hidden');
-            fullDesc.style.maxHeight = fullDesc.scrollHeight + 'px';
-            button.textContent = 'Read Less';
-            button.style.background = '#0aa0a0ff';
-        } else {
-            fullDesc.style.maxHeight = '0';
-            setTimeout(() => {
-                fullDesc.classList.add('hidden');
-            }, 300);
-            button.textContent = 'Read More';
-            button.style.background = '';
-        }
-    }
-
     // Additional info toggle functionality
     const showMoreInfoBtn = document.getElementById('showMoreBtn');
     const moreInfo = document.getElementById('moreInfo');
@@ -466,6 +466,73 @@ document.addEventListener('DOMContentLoaded', () => {
             showMoreInfoBtn.textContent = moreInfo.classList.contains('tour-show') ? 'Show Less' : 'Show More Info';
         });
     }
+
+    // Add-ons functionality
+    const addOnsCheckboxes = document.querySelectorAll('.add-on-checkbox');
+    const timelineList = document.querySelector('.timeline-list');
+    const addOnsTotalElement = document.getElementById('addOnsTotal');
+    let totalAddOnsCost = 0;
+    let addOnCount = document.querySelectorAll('.timeline-item').length;
+
+    function updateAddOnsTotal() {
+        totalAddOnsCost = Array.from(addOnsCheckboxes).reduce((total, checkbox) => {
+            if (checkbox.checked) {
+                return total + parseFloat(checkbox.dataset.price);
+            }
+            return total;
+        }, 0);
+        addOnsTotalElement.textContent = totalAddOnsCost.toFixed(2);
+    }
+
+    function updateTimelineIcons() {
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        timelineItems.forEach((item, index) => {
+            const icon = item.querySelector('.timeline-icon');
+            icon.textContent = index + 1;
+        });
+    }
+
+    addOnsCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            const isChecked = checkbox.checked;
+            const addOnId = checkbox.dataset.id;
+            const existingItem = document.querySelector(`.timeline-item[data-add-on-id="${addOnId}"]`);
+
+            if (isChecked && !existingItem) {
+                addOnCount++;
+                const timelineItem = document.createElement('li');
+                timelineItem.className = 'timeline-item add-on';
+                timelineItem.setAttribute('data-add-on-id', addOnId);
+                timelineItem.innerHTML = `
+                    <div class="timeline-icon">${addOnCount}</div>
+                    <div class="timeline-content">
+                        <div class="timeline-image-container">
+                            <img src="${checkbox.dataset.image}" alt="${checkbox.dataset.title}" />
+                        </div>
+                        <div class="timeline-info">
+                            <h3 class="timeline-stop"><strong>${checkbox.dataset.title}</strong></h3>
+                            <p class="timeline-summary">${checkbox.dataset.summary}</p>
+                            <button class="read-more-btn" onclick="toggleDescription(this)">Read More</button>
+                            <div class="timeline-full-desc hidden">
+                                <p>${checkbox.dataset.fullDesc}</p>
+                            </div>
+                            <div class="timeline-duration">${checkbox.dataset.duration} • ₱${checkbox.dataset.price}</div>
+                        </div>
+                    </div>
+                `;
+                timelineList.appendChild(timelineItem);
+            } else if (!isChecked && existingItem) {
+                existingItem.remove();
+                addOnCount--;
+                updateTimelineIcons();
+            }
+
+            updateAddOnsTotal();
+        });
+    });
+
+    // Initial total cost calculation
+    updateAddOnsTotal();
 });
 
 // Ensure thumbnail click handlers are set outside DOMContentLoaded to avoid conflicts

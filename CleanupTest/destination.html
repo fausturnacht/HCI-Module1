@@ -3,77 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WanderSync - Tour Details</title>
-    <!-- Assuming a consolidated stylesheet, update if necessary -->
+    <title>WanderSync - Manila Old and New Sightseeing Tour Including Intramuros and Fort Santiago</title>
     <link rel="stylesheet" href="assets/css/pages/destination.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-</head>
 <body>
+    <!-- ===== HEADER ===== -->
     <special-header></special-header>
 
   <div class="floating-container">
-      <div class="booking-details">
-        <h2 id="tour-price-display"></h2>
-        <p><span class="discount-note">ⓘ Discounted rates for children</span></p>
-        <div class="row">
-          <div class="col">
-            <label for="datePicker">Date</label>
-            <input type="text" id="datePicker" readonly placeholder="Select a date">
-            <div id="calendarContainer" class="calendar-container"></div>
-          </div>
-          <div class="col">
-            <label for="travelers">Travelers</label>
-            <select id="travelers">
-              <option value="1">1</option>
-              <option value="2" selected>2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col full-width">
-            <label for="timePicker">Start time</label>
-            <input type="text" id="timePicker" readonly placeholder="Select time">
-            <div id="timePickerContainer" class="time-picker-container">
-              <div class="time-picker">
-                <div class="time-dial">
-                  <input type="number" id="hourInput" min="1" max="12" placeholder="HH">
-                  <span>:</span>
-                  <input type="number" id="minuteInput" min="0" max="59" placeholder="MM">
-                  <select id="ampmSelect">
-                    <option value="AM">AM</option>
-                    <option value="PM">PM</option>
-                  </select>
-                </div>
-                <button id="confirmTime">Confirm</button>
-              </div>
+  <div class="booking-details">
+    <h2 id="tour-price-display"></h2>
+    <p><span class="discount-note">ⓘ Discounted rates for children</span></p>
+    <div class="row">
+      <div class="col">
+        <label for="datePicker">Date</label>
+        <input type="text" id="datePicker" readonly placeholder="Select a date">
+        <div id="calendarContainer" class="calendar-container"></div>
+      </div>
+      <div class="col">
+        <label for="travelers">Travelers</label>
+        <select id="travelers">
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col full-width">
+        <label for="timePicker">Start time</label>
+        <input type="text" id="timePicker" readonly placeholder="Select time">
+        <div id="timePickerContainer" class="time-picker-container">
+          <div class="time-picker">
+            <div class="time-dial">
+              <input type="number" id="hourInput" min="1" max="12" placeholder="HH">
+              <span>:</span>
+              <input type="number" id="minuteInput" min="0" max="59" placeholder="MM">
+              <select id="ampmSelect">
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+              </select>
             </div>
+            <button id="confirmTime">Confirm</button>
           </div>
-        </div>
-
-        <button class="check-availability">Check Availability</button>
-        <div class="options">
-          <p><span class="check-mark">✔</span> Free cancellation up to 24 hours before the experience starts (local time)</p>
-          <p><span class="check-mark">✔</span> Reserve Now and Pay Later - Secure your spot while staying flexible</p>
-        </div>
-        <div class="book-ahead">
-          <span class="info-icon">📍</span> Book ahead: On average, this is booked 23 days in advance.
         </div>
       </div>
+    </div>
+
+    <button class="check-availability">Check Out</button>
+    <div class="options">
+      <p><span class="check-mark">✔</span> Free cancellation up to 24 hours before the experience starts (local time)</p>
+      <p><span class="check-mark">✔</span> Reserve Now and Pay Later - Secure your spot while staying flexible</p>
+    </div>
+    <div class="book-ahead">
+      <span class="info-icon">📍</span> Book ahead: On average, this is booked 23 days in advance.
+    </div>
   </div>
+</div>
+
+<!-- ===== CONTACT & PRICE GUARANTEE ===== -->
+ 
+    <div class="contact-section">
+        <div class="contact-option">
+            <img src="https://i.pinimg.com/564x/a4/e1/1b/a4e11b78e6c94821f27832d9c623a805.jpg" alt="Call" class="contact-icon">
+            <span>Book online or call: +639055926741</span>
+        </div>
+        <div class="contact-option">
+            <img src="https://www.vhv.rs/dpng/d/436-4365479_message-icon-png-image-free-download-searchpng-message.png" alt="Message" class="contact-icon">
+            <span>Chat now</span>
+        </div>
+        </div>
+        <div class="price-guarantee-container">
+        <div class="price-guarantee">
+            <img src="https://www.vhv.rs/dpng/d/172-1726923_transparent-medal-clipart-black-and-white-price-tag.png" alt="Price Guarantee" class="guarantee-icon">
+            <span>Lowest Price Guarantee</span>
+        </div>
+        </div>
+
+<!-- ===== MAIN CONTENT ===== -->
 
     <main class="tour-page">
         <section class="tour-hero">
             <div class="tour-details-container">
                 <div class="tour-title">
-                    <h1 id="tour-title"></h1>
+                    <h1 id="tour-title">Manila Old and New Sightseeing Tour Including Intramuros and Fort Santiago</h1>
                     <div class="ratingtop" id="tour-rating-top">
                     </div>
                 </div>
@@ -82,48 +101,80 @@
                         <!-- Thumbnails will be dynamically inserted here -->
                     </div>
                     <div class="main-image">
-                        <img src="" alt="Main tour image" id="mainImg">
+                        <img src="" alt="Main Tour Image" id="mainImg">
                         <div class="button-container">
                             <button class="share-btn">Share</button>
                             <button class="wishlist-btn">Add to Wishlist</button>
                         </div>
                         <div class="share-options" id="shareOptions">
-                            <span>Share Link</span>
-                            <span>Email</span>
+                            <span>
+                                <svg class="share-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                </svg>
+                                Share Link
+                            </span>
+                            <span>
+                                <svg class="email-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                Email
+                            </span>
                         </div>
                         <div class="wishlist-message" id="wishlistMessage"></div>
                         <button class="prev-btn">&lt;</button>
                         <button class="next-btn">&gt;</button>
                     </div>
                 </section>
-                <div class="tour-info" id="tour-info-features">
-                    <!-- Tour features like duration, pickup, etc. will be inserted here -->
+                <div class="tour-info">
+                    <span>⏳ 4 hours (approx)</span>
+                    <span>🚗 Pickup offered</span>
+                    <span>💰 Group discounts</span>
+                    <span>📱 Mobile ticket</span>
+                    <span>🌐 Offered in: English</span>
                 </div>
             </div>
         </section>
 
         <section class="tour-details">
-            <div class="overview">
-                <h2>Overview</h2>
-                <p id="tour-overview-text"></p>
-            </div>
-            <div class="highlights">
-                <h2>Highlights</h2>
-                <ul id="tour-highlights-list">
-                    <!-- Highlights will be dynamically inserted here -->
-                </ul>
-            </div>
-            <div class="inclusions">
-                <h2>Inclusions</h2>
-                <ul id="tour-inclusions-list">
-                    <!-- Inclusions will be dynamically inserted here -->
-                </ul>
+            <!-- <div class="tour-headerv">
+                <h1 class="tour-titlev" id="tour-title">Manila Half-Day Sightseeing Tour</h1>
+                <p class="tour-subtitle">Experience the Heart of the Philippines</p>
+            </div> -->
+            <div class="tour-card">
+                <div class="tour-section overview">
+                    <h2 class="section-title">Overview <span class="toggle-icon">▼</span></h2>
+                    <div class="section-content" id="tour-overview-text">
+                        <!-- Description content will be dynamically inserted here -->
+                    </div>
+                </div>
+                <div class="tour-section highlights">
+                    <h2 class="section-title">Highlights<span class="toggle-icon">▼</span></h2>
+                    <div class="section-content">
+                        <ul>
+                            <li>Explore the historic walled city of Intramuros</li>
+                            <li>Visit Fort Santiago, a 16th-century military fortress</li>
+                            <li>See Rizal Park, a tribute to the national hero Jose Rizal</li>
+                            <li>Admire the architecture of Manila Cathedral</li>
+                            <li>Learn about Manila's colonial past and modern development</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tour-section inclusions">
+                    <h2 class="section-title">Inclusions <span class="toggle-icon">▼</span></h2>
+                    <div class="section-content">
+                        <ul id="tour-inclusions-list">
+                            <!-- Inclusions will be dynamically inserted here -->
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="tour-options">
           <h2>Available Tour Options</h2>
-          <div id="tour-options-container">
+          <div class="option-card" id="tour-options-container">
             <!-- Tour option cards will be dynamically inserted here -->
           </div>
       </section>
@@ -138,75 +189,263 @@
           </div>
           <div class="review-container">
               <button class="nav prev">◄</button>
-              <div class="review-wrapper" id="reviews-wrapper">
-                  <!-- Review cards will be dynamically inserted here -->
+              <div class="review-wrapper">
+                  <div class="review-card">
+                      <div class="stars">⭐⭐⭐⭐⭐</div>
+                      <div class="reviewer">Chad_R - Sep 2025</div>
+                      <p class="review-text">Great experience! The tour was well-organized, informative, and fun. Our guide was friendly and knowledgeable, and we got to see and learn a lot in a short amount of time. Definitely worth it!</p>
+                  </div>
+                  <div class="review-card hidden">
+                      <div class="stars">⭐⭐⭐⭐⭐</div>
+                      <div class="reviewer">Virgilio_M - Sep 2025</div>
+                      <p class="review-text">A very educational experience, learned a lot of history about the different places visited. Our tour guide, Nori was like a history professor showing us the different historical places in Makati and Manila explaining the historical significance found...</p>
+                      <a href="#" class="read-more">Read more</a>
+                  </div>
+                  <div class="review-card hidden">
+                      <div class="stars">⭐⭐⭐⭐☆</div>
+                      <div class="reviewer">Jane_D - Oct 2025</div>
+                      <p class="review-text">Enjoyed the tour, the driver was excellent and made the trip smooth. Would recommend for a quick city overview!</p>
+                  </div>
               </div>
               <button class="nav next">►</button>
           </div>
       </section>
 
         <section class="itinerary-section">
-          <h2>Itinerary</h2>
-          <div class="itinerary-placeholder">
-              <div id="itinerary-intro"></div>
-              <ol id="itinerary-list">
-                  <!-- Itinerary items will be dynamically inserted here -->
-              </ol>
-          </div>
-      </section>
+            <h2 class="itinerary-title">*Itinerary</h2>
+            <div class="itinerary-intro">
+                Choose from a morning or afternoon tour that starts with pickup from your Manila hotel, then travel with your experienced guide into the heart of the Philippine's financial center: Makati.
+            </div>
+            <div class="add-ons-section">
+                <h3 class="add-ons-title">*Available Add-ons</h3>
+                <div class="add-ons-list">
+                    <div class="add-on-item">
+                        <label>
+                            <!-- <input type="checkbox" class="add-on-checkbox" data-id="1" data-title="Cultural Workshop" data-duration="45 minutes" data-price="1500" data-image="https://res.klook.com/image/upload/w_500,h_313,c_fill,q_85/activities/uqthqfdi1ppcl8cxda0x.jpg" data-summary="Experience a hands-on Filipino cultural workshop, including traditional crafts and activities." data-full-desc="Join a 45-minute workshop to learn about Filipino culture through crafts like weaving or pottery, guided by local artisans."> -->
+                            Cultural Workshop - ₱1,500
+                        </label>
+                    </div>
+                    <div class="add-on-item">
+                        <label>
+                            <!-- <input type="checkbox" class="add-on-checkbox" data-id="2" data-title="Local Food Tasting" data-duration="30 minutes" data-price="750" data-image="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Philippine_Food.jpg/500px-Philippine_Food.jpg" data-summary="Savor authentic Filipino dishes at a local eatery." data-full-desc="Enjoy a 30-minute food tasting session featuring iconic Filipino dishes like adobo and halo-halo, with insights into culinary traditions."> -->
+                            Local Food Tasting - ₱750
+                        </label>
+                    </div>
+                    <div class="add-on-item">
+                        <label>
+                            <!-- <input type="checkbox" class="add-on-checkbox" data-id="3" data-title="Guided Museum Tour" data-duration="60 minutes" data-price="2000" data-image="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/10/7e/8f/c0.jpg" data-summary="Explore a local museum with a knowledgeable guide." data-full-desc="Take a 60-minute guided tour through a Manila museum, diving into the rich history and cultural artifacts of the Philippines."> -->
+                            Guided Museum Tour - ₱2,000
+                        </label>
+                    </div>
+                </div>
+                <div class="add-ons-total">
+                    Total Additional Cost: ₱<span id="addOnsTotal">0</span>
+                </div>
+            </div>
+            <div class="itinerary-timeline">
+                <ol class="timeline-list">
+                    <li class="timeline-item">
+                        <div class="timeline-icon">1</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image-container">
+                                <img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/542000/542966-manila.jpg" alt="Rizal Park" />
+                            </div>
+                            <div class="timeline-info">
+                                <h3 class="timeline-stop"><strong>Rizal Park</strong></h3>
+                                <p class="timeline-summary">Rizal Park, also known as Luneta Park or simply Luneta, is a historic urban park located in Ermita, Manila, Philippines which is considered as one of the largest urban parks in Asia. Here you will see the stat ...</p>
+                                <button class="read-more-btn" onclick="toggleDescription(this)">Read More</button>
+                                <div class="timeline-full-desc hidden">
+                                    <p>Rizal Park, also known as Luneta Park or simply Luneta, is a historic urban park located in Ermita, Manila, Philippines which is considered as one of the largest urban parks in Asia. Here you will see the statue of national hero Jose Rizal and other historical monuments.</p>
+                                </div>
+                                <div class="timeline-duration">10 minutes • Admission Ticket Free</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-icon">2</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image-container">
+                                <img src="https://gttp.images.tshiftcdn.com/198642/x/0/san-agustin-church-1.jpg?auto=compress%2Cformat&ch=Width%2CDPR&dpr=1&ixlib=php-3.3.0&w=883" alt="San Agustin Church" />
+                            </div>
+                            <div class="timeline-info">
+                                <h3 class="timeline-stop"><strong>San Agustin Church - Immaculate Conception Parish</strong></h3>
+                                <p class="timeline-summary">San Agustin Church, also known as the Archdiocesan Shrine of Nuestra Señora de Consolación y Correa or the Immaculate Conception Parish, is a Roman Catholic church under the auspices of the Order of St. ...</p>
+                                <button class="read-more-btn" onclick="toggleDescription(this)">Read More</button>
+                                <div class="timeline-full-desc hidden">
+                                    <p>San Agustin Church, also known as the Archdiocesan Shrine of Nuestra Señora de Consolación y Correa or the Immaculate Conception Parish, is a Roman Catholic church under the auspices of the Order of St. Augustine, located in the historic walled city of Intramuros in Manila, Philippines.</p>
+                                </div>
+                                <div class="timeline-duration">15 minutes • Admission Ticket Included</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-icon">3</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image-container">
+                                <img src="https://www.tripsavvy.com/thmb/JnkwRrpRQSUPN-qKc9bR8_9P6-4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AerialviewofManilaAmericanCemeteryPhilippines-a6d2027d724b4ccf82fc74663d6c157f.jpg" alt="Manila American Cemetery" />
+                            </div>
+                            <div class="timeline-info">
+                                <h3 class="timeline-stop"><strong>Manila American Cemetery and Memorial</strong></h3>
+                                <p class="timeline-summary">The Manila American Cemetery and Memorial is located in Fort Bonifacio, Taguig City, Metro Manila, within the boundaries of the former Fort William McKinley. It can be reached most easily from the city via Epif ...</p>
+                                <button class="read-more-btn" onclick="toggleDescription(this)">Read More</button>
+                                <div class="timeline-full-desc hidden">
+                                    <p>The Manila American Cemetery and Memorial is located in Fort Bonifacio, Taguig City, Metro Manila, within the boundaries of the former Fort William McKinley. It can be reached most easily from the city via Epifanio de los Santos Avenue (EDSA).</p>
+                                </div>
+                                <div class="timeline-duration">15 minutes • Admission Ticket Free</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-icon">4</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image-container">
+                                <img src="https://gttp.images.tshiftcdn.com/253912/x/0/ultimate-travel-guide-to-intramuros-old-town-in-manila-city-everything-you-need-to-know-30.jpg?auto=compress%2Cformat&ch=Width%2CDPR&dpr=1&ixlib=php-3.3.0&w=883" alt="Intramuros" />
+                            </div>
+                            <div class="timeline-info">
+                                <h3 class="timeline-stop"><strong>Intramuros</strong></h3>
+                                <p class="timeline-summary">Old-world Intramuros is home to Spanish-era landmarks like Fort Santiago, with a large stone gate and a shrine to national hero Jose Rizal.</p>
+                                <div class="timeline-duration">30 minutes • Admission Ticket Included</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-item pass-by">
+                        <div class="timeline-icon">5</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image-container">
+                                <img src="https://filmphilippines.com/sites/default/files/SEASCAPES-Roxas_Boulevard%2C_Manila_0.jpg" alt="Roxas Boulevard" />
+                            </div>
+                            <div class="timeline-info">
+                                <h3 class="timeline-stop"><strong>Roxas Boulevard (Pass By)</strong></h3>
+                                <p class="timeline-summary">Roxas Boulevard is a popular waterfront promenade in Metro Manila in the Philippines. The boulevard, which runs along the shores of Manila Bay, is well known for its sunsets and stretch of coconut trees.</p>
+                                <div class="timeline-duration pass-by-badge">Pass By</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-item">
+                        <div class="timeline-icon">6</div>
+                        <div class="timeline-content">
+                            <div class="timeline-image-container">
+                                <img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/542000/542986-fort-santiago.jpg" alt="Fort Santiago" />
+                            </div>
+                            <div class="timeline-info">
+                                <h3 class="timeline-stop"><strong>Fort Santiago</strong></h3>
+                                <p class="timeline-summary">Fort Santiago, built in 1593, is a citadel built by Spanish navigator and governor Miguel López de Legazpi for the new established city of Manila in the Philippines. The defense fortress is located in Intramuros, the ...</p>
+                                <button class="read-more-btn" onclick="toggleDescription(this)">Read More</button>
+                                <div class="timeline-full-desc hidden">
+                                    <p>Fort Santiago, built in 1593, is a citadel built by Spanish navigator and governor Miguel López de Legazpi for the new established city of Manila in the Philippines. The defense fortress is located in Intramuros, the historic walled area of Manila.</p>
+                                </div>
+                                <div class="timeline-duration">20 minutes • Admission Ticket Included</div>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
 
-      <section class="additional-info-section">
-          <h2>Additional Info</h2>
-          <ul id="additional-info-list">
-              <!-- Additional info list items will be dynamically inserted here -->
-          </ul>
-          <button id="showMoreBtn">Show more</button>
-          <p id="tour-supplier"></p>
-          <div id="moreInfo" class="modal">
-              <div class="modal-content">
-                  <span id="closeModal">&times;</span>
-                  <h2>Additional Info</h2>
-                  <ul id="additional-info-modal-list">
-                  </ul>
-              </div>
-          </div>
-      </section>
+      <section class="tour-additional-info-section">
+            <h2>Additional Info</h2>
+            <div class="tour-info-container">
+                <ul class="tour-info-list tour-left-list">
+                    <li><span class="tour-icon">✔</span> Confirmation will be received at time of booking</li>
+                    <li><span class="tour-icon">✔</span> Comfortable walking shoes are recommended</li>
+                    <li><span class="tour-icon">✔</span> Children must be accompanied by an adult</li>
+                </ul>
+                <ul class="tour-info-list tour-right-list">
+                    <li><span class="tour-icon">✔</span> Near public transportation</li>
+                    <li><span class="tour-icon">✔</span> Not wheelchair accessible</li>
+                    <li><span class="tour-icon">✔</span> Minimum age is 2 years</li>
+                </ul>
+            </div>
+            <div id="moreInfo" class="tour-more-info tour-hidden">
+                <div class="tour-info-container">
+                    <ul class="tour-info-list tour-left-list">
+                        <li><span class="tour-icon">✔</span> Infants must sit on laps</li>
+                        <li><span class="tour-icon">✔</span> Most travelers can participate</li>
+                    </ul>
+                    <ul class="tour-info-list tour-right-list">
+                        <li><span class="tour-icon">✔</span> Maximum of 30 travelers per tour</li>
+                    </ul>
+                </div>
+            </div>
+            <button id="showMoreBtn" class="tour-btn">Show More Info</button>
+            <p class="tour-supplier" id="tour-supplier"></p>
+        </section>
 
       <section class="traveler-photos-section">
-          <h2>Traveler Photos</h2>
-          <div class="photo-grid" id="traveler-photos-grid">
-              <!-- Traveler photos will be dynamically inserted here -->
-          </div>
-          <div id="morePhotos" class="modalv">
-              <div class="modal-contentv">
-                  <span id="closeModalv">&times;</span>
-                  <h2>Traveler Photos</h2>
-                  <div class="photo-grid" id="traveler-photos-modal-grid">
-                  </div>
-              </div>
-          </div>
-          <button id="showMoreBtnv">Show more</button>
-      </section>
+            <h2>*Traveler Photos</h2>
+            <div class="photo-grid" id="photoGrid">
+                <img src="https://media.tacdn.com/media/photo-m/1280/2d/a0/63/5f/caption.jpg" alt="Park with monument">
+                <img src="https://media.tacdn.com/media/photo-m/1280/2c/3b/59/cb/caption.jpg" alt="Historic monument">
+                <img src="https://media.tacdn.com/media/photo-w/2c/3b/59/ca/caption.jpg" alt="Church exterior">
+                <img src="https://media.tacdn.com/media/photo-w/2c/3b/59/c9/caption.jpg" alt="Fortress gate" style="display: none;">
+                <img src="https://media.tacdn.com/media/photo-w/2c/3b/59/c8/caption.jpg" alt="Additional photo" style="display: none;">
+                <img src="https://media.tacdn.com/media/photo-w/2c/3b/59/cc/caption.jpg" alt="Another photo" style="display: none;">
+                <img src="https://media.tacdn.com/media/photo-m/1280/2c/3b/59/c7/caption.jpg" alt="Another photo" style="display: none;">
+                <img src="https://media.tacdn.com/media/photo-w/2b/9a/27/1a/caption.jpg" alt="Another photo" style="display: none;">
+                <img src="https://media.tacdn.com/media/photo-w/2b/9a/27/18/caption.jpg" alt="Another photo" style="display: none;">
+            </div>
+            <button id="showMorePhotosBtn">Show more photos</button>
+            <button id="showLessPhotosBtn" style="display: none;">Show less photos</button>
+        </section>
 
       <section class="tour-reviews-section">
-          <h2>Reviews</h2>
-          <div class="tour-review-summary" id="tour-review-summary-container">
-              <!-- Review summary will be dynamically inserted here -->
-          </div>
-          <div class="tour-review-search">
-              <input type="text" placeholder="Search reviews (e.g. guide)">
-              <select>
-                  <option>Sort by: Most recent</option>
-              </select>
-          </div>
-          <div class="tour-reviews-list" id="tourReviewsList">
-              <!-- Detailed reviews will be dynamically inserted here -->
-          </div>
-          <button id="tourShowMoreBtn">Show more reviews</button>
-      </section>
+            <h2>Reviews</h2>
+                <div class="tour-review-summary">
+                    <div class="tour-rating-section">
+                        <span class="tour-rating">4.8</span>
+                        <span class="tour-stars">★★★★★</span>
+                        <span class="tour-review-count">based on 500 reviews</span>
+                    </div>
+                    <div class="tour-rating-details">
+                        <p>Total reviews and detailed ratings from Viator, Tripadvisor, and Yelp</p>
+                        <div class="tour-rating-bars">
+                            <div><span>5 stars</span><div class="tour-bar" style="width: 75%;"></div><span>375</span></div>
+                            <div><span>4 stars</span><div class="tour-bar" style="width: 15%;"></div><span>75</span></div>
+                            <div><span>3 stars</span><div class="tour-bar" style="width: 6%;"></div><span>30</span></div>
+                            <div><span>2 stars</span><div class="tour-bar" style="width: 3%;"></div><span>15</span></div>
+                            <div><span>1 star</span><div class="tour-bar" style="width: 1%;"></div><span>5</span></div>
+                        </div>
+                        <p><span class="check-icon">✔</span> We perform thorough checks on all reviews</p>
+                    </div>
+                </div>
+            <div class="tour-review-search">
+                <input type="text" placeholder="Search reviews (e.g. guide)" id="reviewSearchInput">
+                <select id="reviewSortSelect">
+                    <option value="recent">Sort by: Most recent</option>
+                    <option value="oldest">Sort by: Oldest</option>
+                    <option value="highest">Sort by: Highest rating</option>
+                    <option value="lowest">Sort by: Lowest rating</option>
+                </select>
+            </div>
+            <div class="tour-reviews-list" id="tourReviewsList">
+                <div class="tour-review" data-date="2025-09-01" data-rating="4">
+                    <span class="tour-stars">★★★★☆</span>
+                    <p class="tour-review-text">Wet but great experience...</p>
+                    <p class="tour-author">Stephen T. - Sep 2025</p>
+                    <p class="tour-comment">Wet but great experience. Nori, our guide was passionate and very knowledgeable. He tried to make us comfortable.</p>
+                </div>
+                <div class="tour-review" data-date="2025-10-01" data-rating="5">
+                    <span class="tour-stars">★★★★★</span>
+                    <p class="tour-review-text">Amazing tour!</p>
+                    <p class="tour-author">Maria L. - Oct 2025</p>
+                    <p class="tour-comment">The tour was fantastic, the guide was excellent and the sites were breathtaking.</p>
+                </div>
+                <div class="tour-review" data-date="2025-08-15" data-rating="3">
+                    <span class="tour-stars">★★★☆☆</span>
+                    <p class="tour-review-text">Okay tour.</p>
+                    <p class="tour-author">John D. - Aug 2025</p>
+                    <p class="tour-comment">It was average, guide was fine.</p>
+                </div>
+            </div>
+            <button id="tourShowMoreBtn">Show more reviews</button>
+            <button id="tourShowLessBtn" style="display: none;">Show less reviews</button>
+        </section>
     </main>
 
-    <special-footer></special-footer>
+    <footer>
+        <p>© 2025 WanderSync. All Rights Reserved.</p>
+    </footer>
+
     <script src="assets/js/main.js"></script>
     <script src="assets/js/pages/destination.js"></script>
 </body>

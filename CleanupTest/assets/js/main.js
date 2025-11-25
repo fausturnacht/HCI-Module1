@@ -1,3 +1,25 @@
+let geoapifyApiKey = "";
+let googleImagesApiKey_1 = "";
+let googleImagesApiKey_2 = "";
+let googleImagesApiKey_3 = "";
+let googleImagesApiKey_4 = "";
+let googleImagesCXKey = "";
+
+fetch('./assets/js/config.json')
+  .then(res => res.json())
+  .then(config => {
+    // Access the configuration values
+    geoapifyApiKey = config.GEOAPIFY_APIKEY;
+    googleImagesApiKey_1 = config.GOOGLEIMAGES_APIKEY_1;
+    googleImagesApiKey_2 = config.GOOGLEIMAGES_APIKEY_2;
+    googleImagesApiKey_3 = config.GOOGLEIMAGES_APIKEY_3;
+    googleImagesApiKey_4 = config.GOOGLEIMAGES_APIKEY_4;
+    googleImagesCXKey = config.GOOGLEIMAGES_CXKEY;
+
+    // use the values
+  });
+
+
 class SpecialHeader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
@@ -49,12 +71,6 @@ const destinations = [];
 const packages = [];
 const hotels = [];
 const flights = [];
-const geoapifyApiKey = "2d04cb07c549410e9f43ae6a022c6eb9";
-const googleImagesApiKey_1 = "AIzaSyChKz2Hl1IPvMlV9Br8i0rnpNR7E0-QrSE";
-const googleImagesApiKey_2 = "AIzaSyDrpYODpfwSGCoLuP1WKPo4f-CJMVY4HEg";
-const googleImagesApiKey_3 = "AIzaSyDNuN5_SX9Qruxanv2R7BFF6OD04hY9bB8";
-const googleImagesApiKey_4 = "AIzaSyDlFrGObqgsCX7c49OO1EMWusD8HJNpWI4";
-const googleImagesCXKey = "b40a4a2ea5ea04def";
 var placeId = "";
 var packageQuery = "";
 
@@ -447,7 +463,7 @@ async function searchDestination() {
             try{
               const str = feature.properties.name;
               const query = str.replaceAll(' ', '+');
-              const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=${googleImagesApiKey_3}&cx=${googleImagesCXKey}&q=${query}+outdoor+view&searchType=image`);
+              const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=${googleImagesApiKey_2}&cx=${googleImagesCXKey}&q=${query}+outdoor+view&searchType=image`);
               imgData = await response.json();
             }
             catch(e){

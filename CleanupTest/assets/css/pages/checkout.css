@@ -1,0 +1,201 @@
+/* ========================
+   THEME COLORS & BASE
+   ======================== */
+:root{
+  --ink: #0b1220;
+  --ink-2: #3b4b69;
+  --muted: #7c8aa5;
+  --panel: #ffffff;
+  --line: #e6eef7;
+  --blue: #2044e4; /* requested invoice headings color */
+  --blue-2: #8db3ff;
+  --radius: 16px;
+  --shadow: 0 10px 28px rgba(3,16,48,.12);
+  --card-width: 750px;
+  --card-height: 1250px; /* aesthetic guidance, not strict on small screens */
+}
+
+/* reset & base */
+html,body{
+  height:100%;
+  margin:0;
+  font-family: "Times New Roman", Times, serif;
+  color:var(--ink);
+  background:#f3f7fb;
+}
+*{box-sizing:border-box}
+
+/* wrapper centers content vertically */
+.wrap{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  gap:18px;
+  padding:28px 12px 40px;
+}
+
+/* remove the top blue shade (user requested) - no colored header background */
+.hero{width:100%; display:flex; justify-content:center; margin:8px 0 6px; text-align:center;}
+.banner h1{
+  margin:0;
+  font-weight:900;
+  letter-spacing:.5px;
+  font-size:clamp(20px,4vw,44px);
+  color:#0057ff;
+  -webkit-text-stroke: 1px #ffffff;
+  text-shadow: 0 0 0 rgba(0,0,0,0); /* keep crisp */
+}
+
+/* =========================
+   Card common style (thin black border as requested)
+   All major pages use .card (reservation, billing, invoice, confirmation)
+   Size guidance: 750x1250 appearance on large screens; responsive down on small screens.
+   ========================= */
+.card{
+  width: min(var(--card-width), 94vw);
+  background: var(--panel);
+  border: 1px solid #000; /* thin black border for elegance (user requested) */
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  padding: 18px 20px;
+  margin: 8px 0;
+}
+
+/* header area */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  margin-bottom:8px;
+}
+.title{ font-weight:800; font-size:20px; }
+.subtitle{ color:var(--muted); font-size:13px; }
+
+/* step indicators (small) */
+.steps{ display:flex; gap:10px; margin:10px 0 12px; padding:6px 0; }
+.step{ display:flex; align-items:center; gap:8px; padding:6px 10px; border-radius:10px; }
+.dot{ width:28px; height:28px; border-radius:999px; display:grid; place-items:center; background:#f3f7ff; font-weight:700; color:var(--ink); }
+.step.active .dot{ background:var(--blue); color:#fff; }
+
+/* basic grid system */
+.grid{ display:grid; grid-template-columns: repeat(12, 1fr); gap:12px; }
+.col-12{ grid-column: span 12; }
+.col-8{ grid-column: span 8; }
+.col-6{ grid-column: span 6; }
+.col-4{ grid-column: span 4; }
+.col-3{ grid-column: span 3; }
+@media (max-width:860px){ .col-8,.col-6,.col-4,.col-3{ grid-column: span 12; } }
+
+/* form controls */
+.label{ display:block; font-size:13px; color:var(--muted); margin-bottom:6px; }
+.control{
+  width:100%;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:#fff;
+  font-size:14px;
+  outline:none;
+}
+.control:focus{ border-color:var(--blue); box-shadow: 0 0 0 5px rgba(32,68,228,.06); }
+
+/* spinner control (adults/kids/rooms/addons) */
+.spin{ display:inline-flex; border-radius:10px; overflow:hidden; border:1px solid var(--line); background:#fbfdff; align-items:center; }
+.spin button{ width:36px; height:36px; border:0; background:#eef6ff; cursor:pointer; font-weight:900; }
+.spin input{ width:64px; border:0; outline:none; text-align:center; padding:8px 6px; font-weight:700; background:#fff; }
+
+/* addons list */
+.addons-wrap{ display:grid; gap:8px; margin-top:6px; }
+.addon-item{ display:flex; gap:8px; align-items:center; }
+.addon-item .tag{ width:90px; color:var(--muted); font-size:13px; }
+
+/* kv review boxes */
+.kv{ padding:10px 12px; border-radius:10px; border:1px solid var(--line); background:#fff; }
+.kv b{ display:block; font-size:12px; color:var(--muted); margin-bottom:4px; }
+
+/* buttons */
+.actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; justify-content:flex-end; }
+.btn{ padding:10px 14px; border-radius:10px; border:1px solid var(--line); background:#fff; cursor:pointer; font-weight:800; }
+.btn.primary{ background:var(--blue); color:#fff; border-color:transparent; }
+.btn.ghost{ background:transparent; border:1px dashed var(--line); }
+
+/* invoice specific */
+.invoice-container{ padding:0; background:transparent; }
+.invoice-header{ display:flex; justify-content:space-between; align-items:center; background:var(--blue); color:#fff; padding:18px; border-radius:10px 10px 0 0; }
+.invoice-section{ padding:14px 10px; }
+.invoice-table{ width:100%; border-collapse:collapse; margin-top:8px; }
+.invoice-table th, .invoice-table td{ border:1px solid #e6eef7; padding:10px; text-align:left; }
+.invoice-table th{ background:var(--blue); color:#fff; }
+
+/* totals block */
+.totals-invoice{ width:320px; float:right; margin-top:12px; }
+.totals-invoice p{ display:flex; justify-content:space-between; padding:6px 0; font-weight:700; }
+
+/* confirmation */
+.confirm-note{ padding:12px; border-radius:10px; border:1px solid var(--line); background:#fbfbff; margin-top:8px; }
+
+/* footer */
+.site-footer{ text-align:center; color:#2b3a55; font-weight:700; margin-top:12px; }
+
+/* responsive tweaks */
+@media (max-width:720px){
+  .invoice-header{ flex-direction:column; align-items:flex-start; gap:8px; }
+  .totals-invoice{ width:100%; float:none; }
+}
+
+/* small helper text */
+.hint{ font-size:12px; color:var(--muted); margin-top:6px; }
+
+/* visually hide but accessible */
+.sr-only{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+
+/* fare details section */
+.fare-details {
+  margin-top: 16px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fbfdff;
+}
+.fare-details h3 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-2);
+}
+.fare-info {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+/* thank you message */
+.thank-you-message {
+  text-align: center;
+  padding: 20px;
+  margin: 20px 0;
+  background: linear-gradient(135deg, #f8fbff, #e6f0ff);
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+.thank-you-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--blue);
+  margin-bottom: 12px;
+}
+.thank-you-text {
+  font-size: 16px;
+  color: var(--ink-2);
+  margin-bottom: 8px;
+}
+.reservation-timestamp {
+  font-size: 14px;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 12px;
+}

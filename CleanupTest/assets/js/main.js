@@ -1,4 +1,5 @@
 let geoapifyApiKey = "";
+let viatorApiKey = "";
 let googleImagesApiKey_1 = "";
 let googleImagesApiKey_2 = "";
 let googleImagesApiKey_3 = "";
@@ -10,6 +11,7 @@ fetch('./assets/js/config.json')
   .then(config => {
     // Access the configuration values
     geoapifyApiKey = config.GEOAPIFY_APIKEY;
+    viatorApiKey = config.VIATOR_APIKEY;
     googleImagesApiKey_1 = config.GOOGLEIMAGES_APIKEY_1;
     googleImagesApiKey_2 = config.GOOGLEIMAGES_APIKEY_2;
     googleImagesApiKey_3 = config.GOOGLEIMAGES_APIKEY_3;
@@ -81,6 +83,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 function renderPackagesHome(list) {
     const container = document.getElementById('top-deals');
+    if (!container) {
+        console.error('Container with id "top-deals" not found');
+        return;
+    }
     container.innerHTML = '';
     container.className = 'cards';
     list.forEach((pkg, idx) => {

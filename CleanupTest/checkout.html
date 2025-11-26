@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Reservation – Local & International Getaway</title>
+<!-- Link to external CSS -->
+<link rel="stylesheet" href="./assets/css/pages/checkout.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="banner"><h1>Explore Local & International Getaway</h1></div>
+  </div>
+
+  <!-- ============================
+       Package Details Card (Compact)
+       ============================ -->
+  <div class="card" id="packageCard" style="margin-bottom: 20px;" role="region" aria-labelledby="pkgTitle">
+    <div class="header" style="padding-bottom: 12px; border-bottom: 1px solid #e0e0e0;">
+      <h1 id="pkgTitle" style="margin: 0; font-size: 20px; color: var(--ink-2);">Package Details</h1>
+    </div>
+    <div style="display: flex; gap: 20px; align-items: flex-start; padding: 12px 0;">
+      <!-- Left: Details Grid -->
+      <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div style="font-size: 13px;">
+          <div style="color: var(--ink-3); font-weight: 600; margin-bottom: 4px;">Tour Title</div>
+          <div id="pkgTitle-display" style="color: var(--ink-2);">—</div>
+        </div>
+        <div style="font-size: 13px;">
+          <div style="color: var(--ink-3); font-weight: 600; margin-bottom: 4px;">Rating</div>
+          <div id="pkgRating" style="color: var(--ink-2);">—</div>
+        </div>
+        <div style="font-size: 13px;">
+          <div style="color: var(--ink-3); font-weight: 600; margin-bottom: 4px;">Price per Person</div>
+          <div id="pkgPrice" style="color: var(--blue); font-weight: 700; font-size: 16px;">—</div>
+        </div>
+        <div style="font-size: 13px;">
+          <div style="color: var(--ink-3); font-weight: 600; margin-bottom: 4px;">Duration</div>
+          <div id="pkgDuration" style="color: var(--ink-2);">1 Day</div>
+        </div>
+        <div style="font-size: 13px;">
+          <div style="color: var(--ink-3); font-weight: 600; margin-bottom: 4px;">Reviews</div>
+          <div id="pkgReviews" style="color: var(--ink-2);">—</div>
+        </div>
+        <div style="font-size: 13px;">
+          <div style="color: var(--ink-3); font-weight: 600; margin-bottom: 4px;">Availability</div>
+          <div id="pkgAvailability" style="color: var(--ink-2);">—</div>
+        </div>
+      </div>
+      <!-- Right: Thumbnail -->
+      <div style="flex-shrink: 0;">
+        <img id="pkgThumbnail" src="" alt="Package thumbnail" style="width: 140px; height: 140px; border-radius: 8px; object-fit: cover; background-color: #f0f0f0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================
+       Reservation Card (Personal + Travel combined)
+       ============================ -->
+  <div class="card" id="reservationCard" role="region" aria-labelledby="resvTitle">
+
+    <div class="header">
+      <div>
+        <div class="title" id="resvTitle">Reservation Details</div>
+      </div>
+    </div>
+
+    <div class="steps" aria-hidden="true">
+      <div class="step active" data-step="1"><div class="dot">1</div><div><label>Personal & Travel</label></div></div>
+      <div class="step" data-step="2"><div class="dot">2</div><div><label>Review</label></div></div>
+      <div class="step" data-step="3"><div class="dot">3</div><div><label>Billing</label></div></div>
+      <div class="step" data-step="4"><div class="dot">4</div><div><label>Invoice/Confirm</label></div></div>
+    </div>
+
+    <form id="formReservation" onsubmit="return false;">
+      <!-- PAGE 1: Personal + Travel -->
+      <section class="page" data-page="1">
+        <div class="section-title" style="font-weight:800; color:var(--ink-2); margin-bottom:8px;">Your Information & Travel</div>
+
+        <div class="grid">
+          <div class="col-6">
+            <label class="label" for="first">First Name *</label>
+            <input id="first" class="control" required>
+          </div>
+
+          <div class="col-6">
+            <label class="label" for="last">Last Name *</label>
+            <input id="last" class="control" required>
+          </div>
+
+          <div class="col-6">
+            <label class="label" for="emailRes">Email *</label>
+            <input id="emailRes" class="control" type="email" required>
+          </div>
+
+          <div class="col-6">
+            <label class="label" for="phoneRes">Phone *</label>
+            <input id="phoneRes" class="control" type="tel" required>
+          </div>
+
+          <!-- <div class="col-4">
+            <label class="label" for="scope">Travel Scope *</label>
+            <select id="scope" class="control" required>
+              <option value="" hidden>Select scope</option>
+              <option value="Local">Local</option>
+              <option value="International">International</option>
+            </select>
+          </div> --> 
+
+          <!-- <div class="col-8">
+            <label class="label" for="destinationSearch">Destination *</label>
+            <input id="destinationSearch" class="control" list="dest-list" placeholder="Type or pick…" autocomplete="off" required>
+            <datalist id="dest-list"></datalist>
+          </div> -->
+
+          <!-- <div class="col-6">
+            <label class="label" for="accommodation">Accommodation *</label>
+            <select id="accommodation" class="control" required>
+              <option value="" hidden>Select type</option>
+              <option value="Resort">Resort</option>
+              <option value="Hotel">Hotel</option>
+              <option value="Villa">Villa</option>
+              <option value="Apartment">Apartment</option>
+              <option value="Hostel">Hostel</option>
+            </select>
+          </div> -->
+
+          <div class="col-4">
+            <label class="label">Adults *</label>
+            <div class="spin" role="group" aria-label="Adults">
+              <button type="button" data-dec="adults" aria-label="Decrease adults">−</button>
+              <input id="adults" value="1" min="1" max="12" class="control" readonly>
+              <button type="button" data-inc="adults" aria-label="Increase adults">+</button>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <label class="label">Kids (2-11 years)</label>
+            <div class="spin" role="group" aria-label="Kids">
+              <button type="button" data-dec="kids" aria-label="Decrease kids">−</button>
+              <input id="kids" value="0" min="0" max="12" class="control" readonly>
+              <button type="button" data-inc="kids" aria-label="Increase kids">+</button>
+            </div>
+          </div>
+
+          <div class="col-4">
+            <label class="label">Infants (under 2)</label>
+            <div class="spin" role="group" aria-label="Infants">
+              <button type="button" data-dec="infants" aria-label="Decrease infants">−</button>
+              <input id="infants" value="0" min="0" max="12" class="control" readonly>
+              <button type="button" data-inc="infants" aria-label="Increase infants">+</button>
+            </div>
+          </div>
+
+          <!-- <div class="col-4">
+            <label class="label">Rooms *</label>
+            <div class="spin" role="group" aria-label="Rooms">
+              <button type="button" data-dec="rooms" aria-label="Decrease rooms">−</button>
+              <input id="rooms" value="1" min="1" max="8" class="control" readonly>
+              <button type="button" data-inc="rooms" aria-label="Increase rooms">+</button>
+            </div>
+          </div> -->
+
+          <div class="col-4">
+            <label class="label">Number of Add-ons</label>
+            <div class="spin">
+              <button type="button" data-dec="addons">−</button>
+              <input id="addons" value="0" min="0" max="8" class="control" readonly>
+              <button type="button" data-inc="addons">+</button>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <label class="label" for="checkin">Check-in *</label>
+            <input id="checkin" class="control" type="date" required>
+          </div>
+
+          <!-- <div class="col-3">
+            <label class="label" for="checkout">Check-out *</label>
+            <input id="checkout" class="control" type="date" required>
+          </div> -->
+
+          <div class="col-8">
+            <label class="label">Add-ons (describe each)</label>
+            <div id="addonsWrap" class="addons-wrap" aria-live="polite"></div>
+          </div>
+
+          <!-- <div class="col-12">
+            <label class="label">Special Requests</label>
+            <textarea id="requests" class="control" placeholder="e.g. Vegetarian meals"></textarea>
+          </div> -->
+
+          <!-- Fare Details Section -->
+          <div class="col-12">
+            <div class="fare-details">
+              <h3>Fare Details</h3>
+              <div class="fare-info">
+                <p><strong>Infants (under 2 years):</strong> Travel at 10% of adult fare. Must sit on adult's lap during flight.</p>
+                <p><strong>Children (2-11 years):</strong> Pay 75% of adult fare. Eligible for reduced travel tax.</p>
+              </div>
+              <div class="grid">
+                <div class="col-4">
+                  <label class="label">Adult Fare</label>
+                  <div class="control" style="background-color: #f5f5f5; padding: 10px 12px; border-radius: 10px;">
+                    <span id="adultFare"></span>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <label class="label">Child Fare (25% off)</label>
+                  <div class="control" style="background-color: #f5f5f5; padding: 10px 12px; border-radius: 10px;">
+                    <span id="childFare"></span>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <label class="label">Infant Fare (90% off)</label>
+                  <div class="control" style="background-color: #f5f5f5; padding: 10px 12px; border-radius: 10px;">
+                    <span id="infantFare"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="actions" role="group" aria-label="Reservation actions">
+          <button type="button" class="btn primary" id="nextToReview">Next →</button>
+        </div>
+      </section>
+
+      <!-- PAGE 2: Review -->
+      <section class="page" data-page="2" hidden>
+        <div class="section-title" style="font-weight:800; color:var(--ink-2); margin-bottom:8px;">Review Your Reservation</div>
+
+        <div class="grid">
+          <div class="col-6 kv"><b>Full Name</b><div id="revName"></div></div>
+          <div class="col-6 kv"><b>Email</b><div id="revEmail"></div></div>
+          <div class="col-6 kv"><b>Phone</b><div id="revPhone"></div></div>
+          <!-- <div class="col-6 kv"><b>Scope</b><div id="revScope"></div></div>
+          <div class="col-6 kv"><b>Destination</b><div id="revDestination"></div></div>
+          <div class="col-6 kv"><b>Accommodation</b><div id="revAccom"></div></div> -->
+          <div class="col-3 kv"><b>Check-in</b><div id="revCheckin"></div></div>
+          <!-- <div class="col-3 kv"><b>Check-out</b><div id="revCheckout"></div></div> -->
+          <div class="col-4 kv"><b>Adults</b><div id="revAdults"></div></div>
+          <div class="col-4 kv"><b>Kids (2-11)</b><div id="revKids"></div></div>
+          <div class="col-4 kv"><b>Infants (under 2)</b><div id="revInfants"></div></div>
+          <!-- <div class="col-4 kv"><b>Rooms</b><div id="revRooms"></div></div> -->
+          <div class="col-12 kv"><b>Add-ons</b><div id="revAddons"></div></div>
+          <!-- <div class="col-12 kv"><b>Requests</b><div id="revRequests"></div></div> -->
+          <div class="col-12 kv"><b>Fare Details</b>
+            <div>Adult Fare: ₱<span id="revAdultFare">5,600.00</span> x <span id="revAdultCount">1</span></div>
+            <div>Child Fare: ₱<span id="revChildFare">4,200.00</span> x <span id="revChildCount">0</span></div>
+            <div>Infant Fare: ₱<span id="revInfantFare">560.00</span> x <span id="revInfantCount">0</span></div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn" id="backToForm">← Back</button>
+          <button type="button" class="btn primary" id="proceedToBilling">Proceed to Billing →</button>
+        </div>
+      </section>
+
+      <section class="page" data-page="3" hidden>
+        <div style="padding:10px 0;">(Billing will be shown in the Billing card below.)</div>
+      </section>
+    </form>
+  </div>
+
+  <!-- ============================
+       Billing / Payment Card
+       ============================ -->
+  <div class="card" id="billingCard" style="display:none;" role="region" aria-labelledby="billingTitle">
+    <div class="header">
+      <div>
+        <div class="title" id="billingTitle" style="color:var(--blue);">Billing & Payment</div>
+        <div class="subtitle">Confirm your billing details and choose an action</div>
+      </div>
+      <div><small class="hint">Reserve Only → No invoice. Pay Now → Invoice generated.</small></div>
+    </div>
+
+    <form id="billingForm" onsubmit="return false;">
+      <div class="grid">
+        <div class="col-6">
+          <label class="label">Full Name</label>
+          <input id="billFullName" class="control">
+        </div>
+        <div class="col-6">
+          <label class="label">Email</label>
+          <input id="billEmail" class="control" type="email">
+        </div>
+        <div class="col-6">
+          <label class="label">Phone</label>
+          <input id="billPhone" class="control" type="tel">
+        </div>
+
+        <div class="col-12" style="margin-top:8px;">
+          <div class="section-title" style="font-weight:800; color:var(--ink-2); margin-bottom:6px;">Reservation Summary</div>
+          <div class="grid">
+            <div class="col-12 kv">Package: <span id="billPackageName">—</span></div>
+            <div class="col-4 kv">Guests: <span id="billGuests">—</span></div>
+            <div class="col-4 kv">Travel: <span id="billTravelDate">—</span></div>
+            <div class="col-4 kv">Add-ons: <span id="billAddons">—</span></div>
+            <div class="col-12 kv" style="font-weight:800; font-size:16px;">Total: <span id="billTotalPrice">0.00</span></div>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <label class="label">Cardholder Name</label>
+          <input id="cardName" class="control" placeholder="Name on card">
+        </div>
+        <div class="col-6">
+          <label class="label">Card Number</label>
+          <input id="cardNumber" class="control" placeholder="1234 5678 9012 3456">
+        </div>
+        <div class="col-3">
+          <label class="label">Expiry</label>
+          <input id="expiryDate" class="control" type="month" placeholder="01/23">
+        </div>
+        <div class="col-3">
+          <label class="label">CVV</label>
+          <input id="cvv" class="control" maxlength="4" placeholder="123">
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="btn" id="backToReview">← Back</button>
+        <button type="button" class="btn ghost" id="reserveOnlyBtn">Reserve Only</button>
+        <button type="button" class="btn primary" id="payNowBtn">Pay Now & Generate Invoice</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- ============================
+       Invoice / Print Card
+       ============================ -->
+  <div class="card" id="invoiceCard" style="display:none;" role="region" aria-labelledby="invTitle">
+    <div class="invoice-container">
+      <div class="invoice-header">
+        <div><h1 id="invTitle" style="margin:0; font-size:20px;">INVOICE</h1></div>
+        <div style="text-align:right;">
+          <p style="margin:0; font-weight:800;">WANDERSYNC</p>
+          <p style="margin:0; font-size:12px;">Quezon City · +639124583695 · support@wandersync.com</p>
+        </div>
+      </div>
+
+      <div class="invoice-section">
+        <h3 style="margin:6px 0; color:var(--blue);">Invoice To:</h3>
+        <p id="invName"></p>
+        <p id="invEmail"></p>
+        <p id="invPhone"></p>
+      </div>
+
+      <div class="invoice-section">
+        <h3 style="margin:6px 0; color:var(--blue);">Invoice Details:</h3>
+        <p>Invoice No: <strong id="invNo">—</strong></p>
+        <p>Date: <span id="invDateToday">—</span></p>
+        <p>Travel Dates: <span id="invTravelDates">—</span></p>
+        <!-- <p>Destination: <span id="invDestination">—</span></p> -->
+        <p>No. of Travelers: <span id="invTravelers">—</span></p>
+      </div>
+
+      <div style="padding:8px;">
+        <table class="invoice-table" aria-labelledby="invTitle">
+          <thead>
+            <tr><th>Description</th><th>Date</th><th>Place</th><th>Cost</th></tr>
+          </thead>
+          <tbody id="invoiceItems"></tbody>
+        </table>
+
+        <div class="totals-invoice" id="totalsBlock" role="complementary">
+          <p>Sub Total: <span id="invSubTotal">₱0.00</span></p>
+          <p>SST/Tax: <span id="invTax">₱0.00</span></p>
+          <p>Discount: <span id="invDiscount">₱0.00</span></p>
+          <p class="grand-total" style="background:var(--blue); color:#fff; padding:8px; border-radius:8px; margin-top:8px;">Grand Total: <span id="invTotal2">₱0.00</span></p>
+        </div>
+      </div>
+
+      <div class="invoice-section" style="clear:both;">
+        <h3 style="margin:6px 0; color:var(--blue);">Payment Method:</h3>
+        <p id="invPaymentMethod">Paid by Credit Card</p>
+        <p style="margin-top:6px;">We Accept: PayPal, VISA, MasterCard, American Express</p>
+      </div>
+
+      <div style="display:flex; gap:10px; margin-top:12px;">
+        <button class="btn primary" id="printInvoiceBtn">Print Invoice</button>
+        <button class="btn" id="makeAnotherFromInvoice">Make Another Reservation</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================
+       Reservation Confirmation Card
+       ============================ -->
+  <div class="card" id="confirmationCard" style="display:none;" role="region" aria-labelledby="confTitle">
+    <div class="header">
+      <div>
+        <div class="title" id="confTitle">Reservation Confirmation</div>
+        <div class="subtitle">Reservation Only — Not Paid</div>
+      </div>
+      <div><small class="hint">You can print this confirmation or start a new reservation.</small></div>
+    </div>
+
+    <!-- Thank You Message -->
+    <div class="thank-you-message">
+      <div class="thank-you-title">Thank You for Your Reservation!</div>
+      <div class="thank-you-text">We're excited to help you plan your getaway.</div>
+      <div class="thank-you-text">Your reservation has been successfully received and is being processed.</div>
+      <div class="reservation-timestamp" id="reservationTimestamp"></div>
+    </div>
+
+    <div class="grid">
+      <div class="col-12 kv">Reservation No: <strong id="resvNo">—</strong></div>
+      <div class="col-12 kv">Name: <span id="confName">—</span></div>
+      <div class="col-6 kv">Email: <span id="confEmail">—</span></div>
+      <div class="col-6 kv">Phone: <span id="confPhone">—</span></div>
+      <!-- <div class="col-6 kv">Destination: <span id="confDestination">—</span></div> -->
+      <div class="col-6 kv">Dates: <span id="confDates">—</span></div>
+      <div class="col-4 kv">Adults: <span id="confAdults">—</span></div>
+      <div class="col-4 kv">Kids (2-11): <span id="confKids">—</span></div>
+      <div class="col-4 kv">Infants (under 2): <span id="confInfants">—</span></div>
+      <!-- <div class="col-4 kv">Rooms: <span id="confRooms">—</span></div> -->
+      <div class="col-12 kv">Add-ons: <span id="confAddons">—</span></div>
+      <!-- <div class="col-12 kv">Notes: <span id="confNotes">—</span></div> -->
+      <div class="col-12 kv">Fare Details: 
+        <div>Adult Fare: ₱<span id="confAdultFare">5,600.00</span> x <span id="confAdultCount">1</span></div>
+        <div>Child Fare: ₱<span id="confChildFare">4,200.00</span> x <span id="confChildCount">0</span></div>
+        <div>Infant Fare: ₱<span id="confInfantFare">560.00</span> x <span id="confInfantCount">0</span></div>
+      </div>
+    </div>
+
+    <div class="actions" style="justify-content:flex-start;">
+      <button class="btn primary" id="printConfBtn">Print Confirmation</button>
+      <button class="btn" id="newResvBtn">Make Another Reservation</button>
+    </div>
+  </div>
+
+  <div class="site-footer">© 2025 WanderSync Travel Agency</div>
+</div>
+
+<!-- Link to external JS -->
+<script src="./assets/js/pages/checkout.js"></script>
+</body>
+</html>

@@ -1310,12 +1310,12 @@ body {
     bottom: 16px; /* Reduced spacing */
     right: 16px;
     width: 320px; /* Reduced width */
-    height: 450px; /* Reduced height */
+    height: auto; /* Auto height */
     background: var(--glass);
     border: 1px solid var(--glass-b);
     backdrop-filter: blur(8px);
     border-radius: 6px; /* Reduced radius */
-    padding: 12px; /* Reduced padding */
+    padding: 10px; /* Reduced padding */
     z-index: 1000;
     font-family: "Inter", sans-serif;
     border: 1px solid #8b8b8b;
@@ -1323,126 +1323,23 @@ body {
 
 .booking-details h2 {
     font-size: 18px; /* Smaller font */
-    margin: 0 0 4px; /* Reduced margin */
+    margin: 0 0 2px; /* Reduced margin */
     color: var(--black);
 }
 
 .discount-note {
     font-size: 11px; /* Smaller font */
     color: var(--black);
+    margin: 0;
+    display: block;
+    margin-bottom: 8px;
 }
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px; /* Reduced gap */
-    margin-bottom: 16px; /* Reduced margin */
-}
-
-.col {
-    flex: 1;
-    min-width: 140px; /* Reduced width */
-}
-
-.full-width {
-    flex: 0 0 100%;
-}
-
-label {
-    display: block;
-    margin-bottom: 2px;
-    font-weight: 600;
-    font-size: 14px; /* Smaller font */
-    color: var(--black);
-}
-
-input[type="text"], select {
-    width: 100%;
-    padding: 8px; /* Reduced padding */
-    border: 1px solid #8b8b8b;
-    border-radius: 16px; /* Reduced radius */
-    box-sizing: border-box;
-}
-
-input[type="text"]:read-only {
-    background-color: var(--white);
-    cursor: pointer;
-}
-
-.calendar-container, .time-picker-container {
     display: none;
-    position: absolute;
-    background: var(--white);
-    border: 1px solid #8b8b8b;
-    border-radius: 16px; /* Reduced radius */
-    padding: 8px; /* Reduced padding */
-    z-index: 1000;
 }
 
-.calendar-container.active, .time-picker-container.active {
-    display: block;
-}
 
-.calendar-container table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-.calendar-container th, .calendar-container td {
-    padding: 6px; /* Reduced padding */
-    text-align: center;
-}
-
-.calendar-container th {
-    background: var(--glass);
-}
-
-.calendar-container td:hover {
-    background: var(--brand);
-    color: var(--white);
-    cursor: pointer;
-}
-
-.calendar-container .prev-month, .calendar-container .next-month {
-    cursor: pointer;
-    background: var(--glass);
-}
-
-.time-picker {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.time-dial {
-    display: flex;
-    align-items: center;
-    gap: 4px; /* Reduced gap */
-    margin-bottom: 8px; /* Reduced margin */
-}
-
-.time-dial input {
-    width: 55px; /* Reduced width */
-    padding: 4px; /* Reduced padding */
-    text-align: center;
-}
-
-.time-dial select {
-    padding: 4px; /* Reduced padding */
-}
-
-#confirmTime {
-    padding: 6px 12px; /* Reduced padding */
-    background: var(--brand);
-    color: var(--white);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#confirmTime:hover {
-    background: var(--brand-2);
-}
 
 .check-availability {
     width: 100%;
@@ -1453,7 +1350,7 @@ input[type="text"]:read-only {
     border-radius: 16px; /* Reduced radius */
     font-size: 14px; /* Smaller font */
     cursor: pointer;
-    margin: 8px 0; /* Reduced margin */
+    margin: 6px 0; /* Reduced margin */
 }
 
 .check-availability:hover {
@@ -1463,9 +1360,9 @@ input[type="text"]:read-only {
 .options p {
     font-size: 11px; /* Smaller font */
     color: var(--black);
-    margin: 4px 0; /* Reduced margin */
+    margin: 3px 0; /* Reduced margin */
     background-color: var(--white);
-    padding: 6px; /* Reduced padding */
+    padding: 5px; /* Reduced padding */
     border-radius: 4px;
 }
 
@@ -1478,11 +1375,11 @@ input[type="text"]:read-only {
     font-size: 11px; /* Smaller font */
     color: var(--black);
     background-color: var(--white);
-    padding: 6px; /* Reduced padding */
+    padding: 5px; /* Reduced padding */
     border-radius: 4px;
     display: flex;
     align-items: center;
-    margin-top: 8px; /* Reduced margin */
+    margin-top: 3px; /* Reduced margin */
 }
 
 .info-icon {

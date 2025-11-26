@@ -12,51 +12,8 @@
   <div class="floating-container">
   <div class="booking-details">
     <h2 id="tour-price-display"></h2>
-    <p><span class="discount-note">ⓘ Discounted rates for children</span></p>
-    <div class="row">
-      <div class="col">
-        <label for="datePicker">Date</label>
-        <input type="text" id="datePicker" readonly placeholder="Select a date">
-        <div id="calendarContainer" class="calendar-container"></div>
-      </div>
-      <div class="col">
-        <label for="travelers">Travelers</label>
-        <select id="travelers">
-          <option value="1">1</option>
-          <option value="2" selected>2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col full-width">
-        <label for="timePicker">Start time</label>
-        <input type="text" id="timePicker" readonly placeholder="Select time">
-        <div id="timePickerContainer" class="time-picker-container">
-          <div class="time-picker">
-            <div class="time-dial">
-              <input type="number" id="hourInput" min="1" max="12" placeholder="HH">
-              <span>:</span>
-              <input type="number" id="minuteInput" min="0" max="59" placeholder="MM">
-              <select id="ampmSelect">
-                <option value="AM">AM</option>
-                <option value="PM">PM</option>
-              </select>
-            </div>
-            <button id="confirmTime">Confirm</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <button class="check-availability">Check Out</button>
+    <p><span class="discount-note">ⓘ Discounted rates for children and infants</span></p>
+    <button class="check-availability" onclick="checkOut(id, price)">Check Out</button>
     <div class="options">
       <p><span class="check-mark">✔</span> Free cancellation up to 24 hours before the experience starts (local time)</p>
       <p><span class="check-mark">✔</span> Reserve Now and Pay Later - Secure your spot while staying flexible</p>

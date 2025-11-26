@@ -378,6 +378,12 @@ html,body{
                     ₱<span id="infantFare">560.00</span>
                   </div>
                 </div>
+                <div class="col-12">
+                  <label class="label">Total Fare</label>
+                  <div class="control" style="background-color: #e6f0ff; padding: 10px 12px; border-radius: 10px; font-weight: 700; color: var(--blue); font-size: 16px;">
+                    ₱<span id="totalFare">0.00</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -577,14 +583,14 @@ html,body{
       <div class="col-12 kv">Name: <span id="confName">—</span></div>
       <div class="col-6 kv">Email: <span id="confEmail">—</span></div>
       <div class="col-6 kv">Phone: <span id="confPhone">—</span></div>
-      <div class="col-6 kv">Destination: <span id="confDestination">—</span></div>
+      <!-- <div class="col-6 kv">Destination: <span id="confDestination">—</span></div> -->
       <div class="col-6 kv">Dates: <span id="confDates">—</span></div>
       <div class="col-4 kv">Adults: <span id="confAdults">—</span></div>
       <div class="col-4 kv">Kids (2-11): <span id="confKids">—</span></div>
       <div class="col-4 kv">Infants (under 2): <span id="confInfants">—</span></div>
-      <div class="col-4 kv">Rooms: <span id="confRooms">—</span></div>
+      <!-- <div class="col-4 kv">Rooms: <span id="confRooms">—</span></div> -->
       <div class="col-12 kv">Add-ons: <span id="confAddons">—</span></div>
-      <div class="col-12 kv">Notes: <span id="confNotes">—</span></div>
+      <!-- <div class="col-12 kv">Notes: <span id="confNotes">—</span></div> -->
       <div class="col-12 kv">Fare Details: 
         <div>Adult Fare: ₱<span id="confAdultFare">5,600.00</span> x <span id="confAdultCount">1</span></div>
         <div>Child Fare: ₱<span id="confChildFare">4,200.00</span> x <span id="confChildCount">0</span></div>
@@ -744,6 +750,13 @@ function updateFareDisplay() {
   document.getElementById('confAdultCount').textContent = adults;
   document.getElementById('confChildCount').textContent = kids;
   document.getElementById('confInfantCount').textContent = infants;
+  
+  // Calculate and update dynamic total fare
+  const adultFarePrice = 5600;
+  const childFarePrice = 4200;
+  const infantFarePrice = 560;
+  const totalFare = (adults * adultFarePrice) + (kids * childFarePrice) + (infants * infantFarePrice);
+  document.getElementById('totalFare').textContent = totalFare.toLocaleString('en-PH', {minimumFractionDigits: 2});
 }
 
 /* -----------------------------
